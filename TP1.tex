@@ -16,13 +16,13 @@
 	\item Mencione y explique las características más relevantes de GNU/Linux.
 
 
-	\item GNU/Linux es un sistema operativo libre que surge de la combinación del núcleo Linux con el sistema GNU a principios de los 90. 
+	\item GNU/Linux es un sistema operativo libre que surge de la combinación del núcleo Linux con el sistema GNU. 
 	
-	Esta compuesto de principalmente por un kernel, un sistema de archivos jerárquico y un interprete de comandos. El kernel es monolítico híbrido. Es decir se comporta como un único programa en memoria, pero tiene capacidad de cargar y descargar módulos mientras se ejecuta. El kernel se distribuye bajo la licencia libre GPLv2.
+	Está compuesto principalmente por un kernel, un sistema de archivos jerárquico y un intérprete de comandos. El kernel es monolítico modular. Es decir se comporta como un único programa en memoria, pero tiene capacidad de cargar y descargar módulos mientras se ejecuta. El kernel se distribuye bajo la licencia libre GPLv2.
 	
-	Es un sistema operativo multiusuario y multitarea escrito principalmente en C. Esto brinda la posibilidad de soportar varias arquitecturas.
+	Es un sistema operativo multiusuario y multitarea escrito principalmente en C y soporta varias arquitecturas.
 	
-	El sistema de archivos provee un modelo de permisos basado en tres grupos, el usuario, su grupo y los demás.
+	El sistema de archivos provee un modelo de permisos basado en tres categorías, el usuario, su grupo y los demás.
 
 \end{itemize}
 
@@ -206,7 +206,7 @@
 	
 	\item La shell no forma parte del kernel por razones de diseño. No existe necesidad de que esta forme parte del kernel. 
 	
-	Para empezar, la shell no interactúa con hardware, puede usar glibc y ejecutar sus comandos, etc. Es decir, la shell es un programa de usuario que aprovecha las abstracciones del kernel y otras bibliotecas, por esto no es necesario que forme parte de este.	
+	Para empezar, la shell no interactúa con hardware, puede usar \texttt{glibc} y ejecutar sus comandos, etc. Es decir, la shell es un programa de usuario que aprovecha las abstracciones del kernel y otras bibliotecas, por esto, no es necesario que forme parte de este.	
 \end{itemize}
 
 
@@ -225,11 +225,251 @@
 
 \paragraph{6.a}
 
+
 \begin{itemize}
-	\item ¿Qué es el sistema de archivos en Linux?
+	\item ¿Qué es un sistema de archivos en Linux?
 	
-	\item .
+	\item Un sistema de archivos es la estructura y el conjunto de reglas que utiliza el sistema operativo para organizar, almacenar y recuperar datos en un dispositivo de almacenamiento. 
+	
+	Caracterizado principalmente por presentar una jerarquía de árbol único que parte del directorio raíz, donde todos los dispositivos y particiones se montan como sub-directorios. 
 \end{itemize}
+
+
+
+\paragraph{6.b}
+
+
+\begin{itemize}
+	\item ¿Cuál es la estructura básica de los File System en GNU/Linux? Mencione los directorios más importantes e indique qué tipo de información se encuentra en	ellos. ¿A qué hace referencia la sigla FHS?
+	
+	\item La estructura básica de un sistema de archivos en GNU/Linux es la de árbol. Con su raíz en \texttt{/}. 
+	
+	Sus directorios más importantes son:
+		\begin{enumerate}
+			\item \texttt{/bin}: a donde se almacenan los binarios de comandos accesibles a todos los usuarios.
+			
+			\item \texttt{/boot}: archivos estáticos que carga el gestor de arranque.
+			
+			\item \texttt{/dev}: archivos de dispositivos.
+			
+			\item \texttt{/etc}: configuración del sistema.
+			
+			\item \texttt{/home}: directorios de archivos de los usuarios.
+			
+			\item \texttt{/lib}: librerías compartidas y módulos del kernel.
+			
+			\item \texttt{/media}: donde se montan medios extraíbles.
+			
+			\item \texttt{/mnt}: donde se montan temporalmente sistemas de archivos.
+			
+			\item \texttt{/proc}: Sistema de archivos virtual que contiene información de los procesos en ejecución y del kernel en tiempo real 
+			
+			\item \texttt{/root}: home del superusuario.
+			
+			\item \texttt{/run}: datos de variables en tiempo de ejecucion.
+			
+			\item \texttt{/sbin}: archivos binarios del sistema.
+			
+			\item \texttt{/srv}: archivos de servicios provistos por el sistema.
+			
+			\item \texttt{/tmp}: archivos temporales.
+			
+			\item \texttt{/usr}: Almacena la mayoría de los programas, librerías, documentación y archivos de código fuente del sistema para los usuarios.
+			
+			\item \texttt{/var}: logs, etc.
+		\end{enumerate}
+		
+	FHS, hace referencia a \textit{Filesystem Hierarchy Standard}, es un estándar que regula la ubicación de archivos y directorios en SO tipo Unix.  
+\end{itemize}
+
+
+\paragraph{6.c}
+\begin{itemize}
+	\item Mencione sistemas de archivos soportados por GNU/Linux
+	
+	\item Los principales sistemas de archivos modernos son \texttt{ext4, btrfs, y XFS}.
+\end{itemize}
+
+
+
+\paragraph{7.a}
+
+\begin{itemize}
+
+	\item Particiones: definición, tipos, ventajas y desventajas.
+		
+	Las particiones son divisiones lógicas de un medio de almacenamiento. El sistema operativo las trata como dispositivos independientes.
+		
+	Existen dos esquemas principales de particionado: \textbf{MBR} y \textbf{GPT}.
+	\begin{itemize}
+			\item \textbf{MBR}: soporta hasta 4 particiones primarias; para obtener más particiones se crea una partición extendida que contiene particiones lógicas. Está limitado a discos de hasta 2 TB.
+			\item \textbf{GPT}: no tiene el límite práctico de 4 particiones primarias, soporta discos de gran tamaño, incluye una copia de seguridad de la tabla de particiones y utiliza CRC para detectar corrupción.
+	\end{itemize}
+		
+	\textbf{Ventajas del particionado:}
+	\begin{itemize}
+		\item Aislamiento de fallos: si una partición se corrompe, las demás pueden permanecer intactas.
+		\item Posibilidad de instalar múltiples sistemas operativos.
+		\item Uso de diferentes sistemas de archivos según los requerimientos de cada partición.
+	\end{itemize}
+		
+	\textbf{Desventajas del particionado:}
+	\begin{itemize}
+		\item Poca flexibilidad por tener un tamaño fijo.
+		\item Posible desperdicio de espacio libre si las particiones no se dimensionan adecuadamente.
+		\item Redimensionar particiones puede implicar riesgos o requerir herramientas específicas.
+	\end{itemize}
+
+\end{itemize}
+
+\paragraph{7.b}
+\begin{itemize}
+	\item ¿Cómo se identifican las particiones en GNU/Linux? (Considere discos IDE, SCSI	y SATA).
+	
+	\item las particiones se identifican mediante archivos especiales ubicados en \texttt{/dev}. En el caso de IDE \texttt{hda, hdb}, etc. corresponden a discos y \texttt{hda1, hda2} se corresponden a particiones de \texttt{hda}. En el caso de SATA y SCSI se usa \texttt{sda, sdb}, etc. para discos y \texttt{sda1, sda2} para particiones.
+\end{itemize}
+
+
+\paragraph{7.c}
+\begin{itemize}
+	\item ¿Cuántas particiones son necesarias como mínimo para instalar GNU/Linux?	Nómbrelas indicando tipo de partición, identificación, tipo de File System y punto de montaje.
+	
+	\item Técnicamente la única partición imprescindible es la de la raíz. Que podría tener la identificación sda2 y  puede tener una variedad de sistemas de archivos, su punto de montaje es /. En sistemas UEFI se necesita una partición EFI. Que debe ser FAT32 y tiene punto de montaje /boot/efi. Opcionalmente se usa también una partición de intercambio.
+\end{itemize}
+
+
+
+
+
+\paragraph{7.d}
+\begin{itemize}
+	\item Dar ejemplos de diversos casos de particionamiento dependiendo del tipo de tarea que se deba realizar en su sistema operativo.
+	
+	\item En una estación de trabajo bastaría con separar /home y tener las particiones necesarias / y /boot/efi. Opcionalmente podemos tener swap.
+	
+	
+	En un servidor web podríamos separar /var y /tmp, además de separar /srv o /home para aislar logs, temporales y datos del servicio de la raíz.
+	
+	En un sistema embebido usualmente hay una raíz de solo lectura y algunas particiones de escritura para configuración o datos de aplicación.
+\end{itemize}
+
+
+
+\paragraph{7.e}
+\begin{itemize}
+	\item ¿Es posible visualizar particiones del tipo FAT y NTFS (que son de Windows) en GNU/Linux?
+	
+	\item Si, no solo es posible la lectura si no también la escritura. Además en el caso de FAT ademas este es el sistema de archivos obligatorio para la partición EFI. Por lo que la mayoría de distribuciones tienen una partición FAT.
+\end{itemize}
+
+
+\paragraph{7.f}
+\begin{itemize}
+	\item ¿Qué tipo de software para particionar existe? Menciónelos y compare.
+	
+	\item Principalmente están fdisk y gparted. Por un lado, fdisk es una de interfaz de texto que no formatea, no permite re dimensionamiento, pero, está disponible por defecto en la mayoría de distribuciones. Por otro lado, gparted es una utilidad gráfica que si hace formateo y re dimensiona particiones pero puede requerir instalación y un entorno gráfico.
+\end{itemize}
+
+
+
+\paragraph{8.a}
+\begin{itemize}
+	\item ¿Qué es el BIOS? ¿Qué tarea realiza?
+	
+	\item el BIOS de \textit{Basic I/O System}, es un programa que se ejecuta al arrancar una computadora x86 y se encarga principalmente de inicializar el hardware y cargar un gestor de arranque para que el SO tome el control.
+	
+	
+	Primero realiza un POST, \textit{power on self test} que verifica cuales dispositivos tiene disponibles la computadora y su funcionamiento. 
+	
+	Configura los dispositivos básicos según la configuración almacenada en su memoria.
+	
+	
+	Busca un dispositivo de almacenamiento que tenga un sector de arranque válido según su configuración
+	
+	
+	lee el primer sector físico de disco y carga el gestor de arranque transfiriéndole el control.
+	
+	Durante el arranque y incluso después ofrece rutinas para E/S, que permiten interactuar con el teclado, pantalla y discos.
+\end{itemize}
+
+
+
+\paragraph{8.b}
+\begin{itemize}
+	\item ¿Qué es UEFI? ¿Cuál es su función?
+	
+	\item UEFI de \textit{Unified Extensible Firmware Interface} es un estándar que regula la interfaz entre el firmware de la plataforma, hardware, y el SO durante el arranque.
+	
+	Su función principal es la de inicializar el hardware y cargar el SO ofreciendo un entorno estándar que permita la comunicación entre el SO y el firmware empotrado.
+	
+	Por este motivo realiza las tareas:
+	\begin{itemize}
+		\item Un auto-diagnóstico parecido al de BIOS.
+	
+		\item Cargar los controladores de los dispositivos básicos.
+	
+		\item Leer la tabla de particiones GPT 
+	
+		\item Localizar y ejecutar el cargador de arranque, archivo .efi, dentro de la partición ESP.
+	
+		\item Ofrecer un entorno de pre-arranque, un intérprete de comandos.
+	
+	\end{itemize}
+	
+	
+	Además, UEFI proporciona servicios de tiempo de ejecución, que permiten al sistema operativo seguir comunicándose con el firmware incluso después de haber tomado el control. Por ejemplo UEFI brinda la infraestructura necesaria para la interfaz ACPI, que permite al sistema operativo gestionar el consumo energético de los dispositivos y controlar los estados de suspensión del sistema.
+	
+\end{itemize}
+
+
+\paragraph{8.c}
+\begin{itemize}
+	\item ¿Qué es el MBR? ¿Qué es el MBC?
+	
+	\item ¿Qué es el MBR (Master Boot Record)?
+	
+	El MBR, o Registro de Arranque Maestro, es el primer sector físico de un dispositivo de almacenamiento (como un disco duro o una memoria USB). Ocupa exactamente 512 bytes y es la piedra angular del sistema de arranque en los sistemas con BIOS. Su función principal es iniciar el proceso de carga del sistema operativo y definir cómo está particionado el disco.
+	
+	Para cumplir su objetivo, el MBR contiene tres partes fundamentales:
+	
+	El Código de Arranque Maestro (MBC): Ocupa los primeros 446 bytes. Es un pequeño programa ejecutable que la BIOS carga en memoria para comenzar el proceso de arranque.
+	
+	La Tabla de Particiones: Ocupa 64 bytes. Describe cómo está dividido el disco. Como cada entrada de partición ocupa 16 bytes, solo puede haber un máximo de 4 particiones primarias.
+	
+	La Firma de Arranque: Son los últimos 2 bytes. Es un valor fijo (0x55AA) que actúa como una "marca" para que la BIOS sepa que el disco es válido para arrancar.
+	
+	¿Qué es el MBC (Master Boot Code)?
+	
+	El MBC, o Código de Arranque Maestro, es la primera parte del MBR y ocupa sus primeros 446 bytes. Actúa como el primer programa que se ejecuta. Su misión es:
+	
+	Analizar la tabla de particiones del MBR.
+	
+	Buscar la partición activa, la que está marcada para arrancar.
+	
+	Localizar el sector de inicio de esa partición activa y cargarlo en memoria.
+	
+	Transferir el control a ese nuevo código (el VBR, o Volume Boot Record), que es específico del sistema operativo y continuará el proceso de arranque.
+	
+	Relación y Función en el Arranque
+	
+	La relación es de continente y contenido: el MBR es el sector completo de 512 bytes y el MBC es una parte de él (los primeros 446 bytes).
+	
+	El proceso de arranque en un sistema con BIOS funciona así:
+	
+	Al encender el PC, la BIOS realiza el POST y busca un dispositivo de arranque.
+	
+	Cuando lo encuentra, lee el primer sector (el MBR) y lo carga en memoria.
+	
+	La BIOS ejecuta el MBC (el código de 446 bytes) que contiene ese MBR.
+	
+	El MBC busca la partición activa en la tabla de particiones.
+	
+	Una vez encontrada, carga el sector de arranque de esa partición (el VBR) y le transfiere el control.
+	
+	A partir de ahí, el VBR (que ya es específico de cada sistema operativo) se encarga de cargar el gestor de arranque (como GRUB o el gestor de Windows) y, finalmente, el sistema operativo.
+\end{itemize}
+
+
 
 
 
