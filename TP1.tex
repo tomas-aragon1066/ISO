@@ -426,47 +426,27 @@
 \begin{itemize}
 	\item ¿Qué es el MBR? ¿Qué es el MBC?
 	
-	\item ¿Qué es el MBR (Master Boot Record)?
+		\item MBR de \textit{master boot record} es el primer sector físico de un medio de almacenamiento, encargado de cargar el SO y definir cómo está particionado el disco. Este sector de 512 bytes tiene tres partes:
+		
+		\begin{enumerate}
+			\item MBC de \textit{master boot code}, ocupa los primeros 446 bytes y es el código que la BIOS carga en memoria y ejecuta al arrancar. Su función es: analizar la tabla de particiones, buscar la que es activa, localizar el sector de inicio de la partición activa, cargarlo en memoria y, finalmente, transferir el control a este código que ya es específico del SO.
+			
+			\item Tabla de particiones, ocupa 64 bytes, describe cómo está particionado el disco, tiene un máximo de 4 entradas y por ende ese límite de particiones primarias.
+			
+			\item Firma de arranque, que ocupa 2 bytes y sirve como indicador de que este disco es válido para arrancar.
+		\end{enumerate}
 	
-	El MBR, o Registro de Arranque Maestro, es el primer sector físico de un dispositivo de almacenamiento (como un disco duro o una memoria USB). Ocupa exactamente 512 bytes y es la piedra angular del sistema de arranque en los sistemas con BIOS. Su función principal es iniciar el proceso de carga del sistema operativo y definir cómo está particionado el disco.
 	
-	Para cumplir su objetivo, el MBR contiene tres partes fundamentales:
+\end{itemize}
+
+
+
+\paragraph{8.d}
+\begin{itemize}
+	\item ¿A qué hacen referencia las siglas GPT? ¿Qué sustituye? Indique cuál es su formato.
 	
-	El Código de Arranque Maestro (MBC): Ocupa los primeros 446 bytes. Es un pequeño programa ejecutable que la BIOS carga en memoria para comenzar el proceso de arranque.
+	\item Hacen referencia a \textit{GUID Partition Table}. Un esquema de partición que reemplaza a MBR. En especial en sistemas con arranque EFI.
 	
-	La Tabla de Particiones: Ocupa 64 bytes. Describe cómo está dividido el disco. Como cada entrada de partición ocupa 16 bytes, solo puede haber un máximo de 4 particiones primarias.
-	
-	La Firma de Arranque: Son los últimos 2 bytes. Es un valor fijo (0x55AA) que actúa como una "marca" para que la BIOS sepa que el disco es válido para arrancar.
-	
-	¿Qué es el MBC (Master Boot Code)?
-	
-	El MBC, o Código de Arranque Maestro, es la primera parte del MBR y ocupa sus primeros 446 bytes. Actúa como el primer programa que se ejecuta. Su misión es:
-	
-	Analizar la tabla de particiones del MBR.
-	
-	Buscar la partición activa, la que está marcada para arrancar.
-	
-	Localizar el sector de inicio de esa partición activa y cargarlo en memoria.
-	
-	Transferir el control a ese nuevo código (el VBR, o Volume Boot Record), que es específico del sistema operativo y continuará el proceso de arranque.
-	
-	Relación y Función en el Arranque
-	
-	La relación es de continente y contenido: el MBR es el sector completo de 512 bytes y el MBC es una parte de él (los primeros 446 bytes).
-	
-	El proceso de arranque en un sistema con BIOS funciona así:
-	
-	Al encender el PC, la BIOS realiza el POST y busca un dispositivo de arranque.
-	
-	Cuando lo encuentra, lee el primer sector (el MBR) y lo carga en memoria.
-	
-	La BIOS ejecuta el MBC (el código de 446 bytes) que contiene ese MBR.
-	
-	El MBC busca la partición activa en la tabla de particiones.
-	
-	Una vez encontrada, carga el sector de arranque de esa partición (el VBR) y le transfiere el control.
-	
-	A partir de ahí, el VBR (que ya es específico de cada sistema operativo) se encarga de cargar el gestor de arranque (como GRUB o el gestor de Windows) y, finalmente, el sistema operativo.
 \end{itemize}
 
 
