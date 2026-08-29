@@ -447,9 +447,183 @@
 	
 	\item Hacen referencia a \textit{GUID Partition Table}. Un esquema de partición que reemplaza a MBR. En especial en sistemas con arranque EFI.
 	
+	Su formato incluye:
+	
+	\begin{enumerate}
+		\item MBR de protección: mantiene compatibilidad.
+		
+		\item Cabecera GPT primaria: contiene la firma 'EFI PART', el tamaño de la tabla de particiones, el GUID del disco, la cantidad de entradas y un checksum. 
+		
+		\item Entradas de partición: cada una describe una partición con GUID único, tipo, LBA de inicio y fin y sus atributos.
+		
+		
+		\item Cabecera GPT de respaldo
+		
+	\end{enumerate}
+	
 \end{itemize}
 
 
+
+\paragraph{8.e}
+\begin{itemize}
+	\item ¿Cuál es la funcionalidad de un “Gestor de Arranque”? ¿Qué tipos existen?¿Dónde se instalan? Cite gestores de arranque conocidos.
+	
+	\item Un gestor de arranque tiene la tarea de localizar el SO en el disco, cargarlo en memoria y cederle el control. Entre sus funciones están:
+	
+	\begin{enumerate}
+		\item Cargar el kernel, y una imagen de \textit{disco RAM}
+		
+		\item Pasar parámetros al kernel.
+		
+		\item Cargar y ejecutar aplicaciones \textit{.efi}.
+		
+		\item Presentar un menú con opciones de SO y versiones del kernel.
+		
+		
+	\end{enumerate}
+	
+	En sistemas BIOS el gestor se instala en el MBR, mientras que en UEFI se instala en la partición EFI, \texttt{/boot/efi}.
+	
+	Existen varios tipos, avanzados como GRUB 2, o simples como LILO y Windows Boot Manager.
+	
+\end{itemize}
+
+
+
+\paragraph{8.f}
+\begin{itemize}
+	\item ¿Cuáles son los pasos que se suceden desde que se prende una computadora hasta que el SO es cargado (proceso de \textit{bootstrap})?
+	
+	\item la computadora ejecuta la BIOS/UEFI.
+	
+	\item realiza un auto diagnostico, y carga controladores básicos y carga el gestor de arranque ya sea desde el MBR o la partición EFI.
+	
+	\item el gestor de arranque carga el kernel del SO, y a menudo un \textit{initrd/initramfs}.
+	
+	\item el kernel se inicializa y monta la raíz.
+	
+	\item se ejecuta el primer proceso, \textit{init/systemd}.
+	
+\end{itemize}
+
+
+\paragraph{8.g}
+\begin{itemize}
+	\item Analice el proceso de arranque en GNU/Linux y describa sus principales pasos.
+	
+	\begin{enumerate}
+		\item Encendido y ejecución de firmware.
+		
+		\item Auto diagnóstico e inicialización de hardware: se verifica el estado de memoria, discos, etc, se inicializan los controladores básicos de dispositivo y se define el orden de arranque.
+		
+		\item Localización y carga del gestor de arranque.
+		
+		\item Ejecución del gestor de arranque: GRUB carga en memoria el kernel \texttt{vmlinuz-}. Carga un disco RAM \texttt{initrd.img-}. Pasa parámetros al kernel, \texttt{root=/dev/sda1, ro, quiet}.
+		
+		\item Inicialización del kernel: se descomprime el kernel y empieza su inicialización, configura la gestión de memoria, detecta e inicializa dispositivos de hardware y carga el sistema de archivos raíz temporal mediante \texttt{initramfs}. Una vez cargados los controladores esenciales, se monta el sistema de archivos real y se realiza el cambio de raíz mediante \texttt{switch\_root}.
+		
+		
+		\texttt{initramfs} contiene los drivers y herramientas esenciales que permiten montar el sistema de archivos real.
+		
+		\item Ejecución del primer proceso: se ejecuta el primer proceso de usuario, init o systemd. Tiene PID 1 y es el responsable de iniciar todos los procesos del sistema.
+		
+		\item Arranque de servicios y entorno de usuario: el sistema de inicio lanza servicios de red, cron, syslog, etc., terminales virtuales y si corresponde, el entorno gráfico. El sistema está listo entonces para iniciar sesión.
+		
+	\end{enumerate}
+	
+\end{itemize}
+
+
+\paragraph{8.h}
+\begin{itemize}
+	\item ¿Cuáles son los pasos que se suceden en el proceso de parada (\textit{shutdown}) de GNU/Linux?
+	
+	
+	\begin{enumerate}
+		\item Inicio del apagado: el usuario ejecuta un comando de apagado, \texttt{shutdown -h now} o \texttt{systemctl poweroff} y el sistema de inicio recibe la orden.
+		
+		\item Notificación a los usuarios: un mensaje vía \texttt{wall} que advierte a los usuarios.
+		
+		\item Detención ordenada de los servicios: se ejecutan los scripts de parada en orden inverso que fueron iniciados. En systemd se detienen las unidades activas.
+	
+		\item Terminación de procesos de usuario: se terminan los procesos de los usuarios, cerrando sus sesiones y aplicaciones.
+		
+		\item Sincronización de datos: se ejecuta el comando \texttt{sync} para escribir en disco los datos pendientes de la caché.
+		
+		\item Desmontaje de sistemas de archivos: se desmontan todos, excepto el raíz, que se remonta como solo lectura.
+		
+		\item Detención de procesos restantes: se envía \texttt{SIGTERM} y si no responde, \texttt{SIGKILL}.
+		
+		\item Apagado de hardware: el kernel ejecuta rutinas de apagado de hardware como discos, puertos, etc. Finalmente el sistema se detiene, \texttt{halt} o \texttt{poweroff}.
+	
+	\end{enumerate}
+	
+\end{itemize}
+
+
+
+
+\paragraph{8.h}
+\begin{itemize}
+	\item ¿Es posible tener en una PC GNU/Linux y otro SO instalado? Justifique.
+	
+	Si, cada SO puede instalarse en su propia partición o disco. En sistemas modernos con UEFI cada SO tiene su gestor de arranque en la partición EFI. Y el gestor de arranque, por ej. GRUB presenta un menú con las opciones disponibles.
+	
+\end{itemize}
+
+
+
+
+\paragraph{9.a}
+\begin{itemize}
+	\item ¿Cómo se identifican los archivos en GNU/Linux?
+	
+	En GNU/Linux no existe el concepto de extensión de archivo. Un archivo se identifica por su contenido, tipo, es decir directorio, enlace, etc, y sus permisos. Herramientas como \texttt{file} permiten determinar el tipo.
+	
+\end{itemize}
+
+
+
+
+\paragraph{9.e}
+\begin{itemize}
+	\item \texttt{ln -s ~/testing /testOnRoot}, crea un enlace simbólico al archivo ~/testing en /.
+	
+	
+	\item \texttt{cp ~/testing ~/testingCopy}, crea una copia del archivo ~/testing en el mismo directorio.
+	
+	\item \texttt{find [ruta/s..] [expresion]}
+	
+	\texttt{find /home -name "TP1.pdf"}
+	
+	\texttt{find /home -iname "*.JPG"}
+	
+\end{itemize}
+
+
+
+
+
+
+\paragraph{9.e}
+\begin{itemize}
+	\item investigue el objetivo, parámetros y ubicación de los siguientes comandos:
+	
+	
+	\item\texttt{man}: una interfaz para los manuales del sistema. Tiene la sintaxis básica es \texttt{man [seccion] palabra}, las secciones más comunes son del 1 al 9, y se provee el nombre de alguna utilidad, llamada al sistema, libc, etc. Por ej. \texttt{man 2 write} para llamadas al sistema. Usa un pager, normalmente \texttt{less}, para mostrar las páginas.
+	
+	Parámetros útiles:
+	
+	\item -f: da una descripción breve.
+	\item -w: da la ruta de la pagina del manual.
+	\item -a: muestra todas las coincidencias en todas las secciones del manual en sucesión.
+	\item -k: retorna las paginas del manual con nombre o descripción dados.
+	
+	Las páginas están guardadas en \texttt{/usr/share/man/} y el ejecutable en \texttt{/usr/bin/man}.
+
+	
+\end{itemize}
 
 
 
