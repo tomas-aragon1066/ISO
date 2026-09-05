@@ -1,39 +1,175 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.7.26)  29 AUG 2026 15:28
-entering extended mode
- restricted \write18 enabled.
- %&-line parsing enabled.
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025/Debian)  (format=lualatex 2026.7.26)  5 SEP 2026 17:19
+ restricted system commands enabled.
 **TP1.tex
 (./TP1.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
-(/usr/share/texlive/texmf-dist/tex/latex/paper/paper.cls
+Lua module: luaotfload 2024-12-03 v3.29 Lua based OpenType font support
+Lua module: lualibs 2023-07-13 v2.76 ConTeXt Lua standard libraries.
+Lua module: lualibs-extended 2023-07-13 v2.76 ConTeXt Lua libraries -- extended 
+collection.
+luaotfload | conf : Root cache directory is "/home/ta/.texlive2025/texmf-var/lua
+tex-cache/generic/names".
+luaotfload | init : Loading fontloader "fontloader-2023-12-28.lua" from kpse-res
+olved path "/usr/share/texlive/texmf-dist/tex/luatex/luaotfload/fontloader-2023-
+12-28.lua".
+Lua-only attribute luaotfload@noligature = 1
+luaotfload | init : Context OpenType loader version 3.134
+Inserting `luaotfload.node_processor' in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' in `hpack_filter'.
+Inserting `luaotfload.glyph_stream' in `glyph_stream_provider'.
+Inserting `luaotfload.define_font' in `define_font'.
+Lua-only attribute luaotfload_color_attribute = 2
+luaotfload | conf : Root cache directory is "/home/ta/.texlive2025/texmf-var/lua
+tex-cache/generic/names".
+Inserting `luaotfload.harf.strip_prefix' in `find_opentype_file'.
+Inserting `luaotfload.harf.strip_prefix' in `find_truetype_file'.
+Removing  `luaotfload.glyph_stream' from `glyph_stream_provider'.
+Inserting `luaotfload.harf.glyphstream' in `glyph_stream_provider'.
+Inserting `luaotfload.harf.finalize_vlist' in `post_linebreak_filter'.
+Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'.
+Inserting `luaotfload.cleanup_files' in `wrapup_run'.
+Inserting `luaotfload.harf.finalize_unicode' in `finish_pdffile'.
+Inserting `luaotfload.glyphinfo' in `glyph_info'.
+Lua-only attribute luaotfload.letterspace_done = 3
+Inserting `luaotfload.aux.set_sscale_dimens' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_font_index' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.patch_cambria_domh' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.fixup_fontdata' in `luaotfload.patch_font_unsafe'.
+Inserting `luaotfload.aux.set_capheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_xheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.rewrite_fontname' in `luaotfload.patch_font'.
+Inserting `tracingstacklevels' in `input_level_string'. (/usr/share/texlive/tex
+mf-dist/tex/latex/paper/paper.cls
 Document Class: paper 2008/05/30 1.0l LaTeX document class (wm).
-\hours=\count275
-\minutes=\count276
+\hours=\count273
+\minutes=\count274
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
-)
+luaotfload | db : Font names database loaded from /home/ta/.texlive2025/texmf-va
+r/luatex-cache/generic/names/luaotfload-names.luc.gz)
 \beforetitlespace=\skip49
-\c@part=\count277
-\c@section=\count278
-\c@subsection=\count279
-\c@subsubsection=\count280
-\c@paragraph=\count281
-\c@subparagraph=\count282
+\c@part=\count275
+\c@section=\count276
+\c@subsection=\count277
+\c@subsubsection=\count278
+\c@paragraph=\count279
+\c@subparagraph=\count280
 \exampleindent=\skip50
-\c@figure=\count283
-\c@table=\count284
+\c@figure=\count281
+\c@table=\count282
 \abovecaptionskip=\skip51
 \belowcaptionskip=\skip52
-\bibindent=\dimen148
+\bibindent=\dimen147
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
-)
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
+6.
+
+(/usr/share/texmf/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+))
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2026/01/18 v26.1 The multilingual framework for LuaLaTeX, pdfLaT
 eX and XeLaTeX
-\babel@savecnt=\count285
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/luababel.def
+\bbl@readstream=\read2
+\l@dumylang=\language2
+Package babel Info: Non-standard hyphenation setup on input line 118.
+\l@nohyphenation=\language3
+\l@croatian=\language4
+\l@ukrainian=\language5
+\l@estonian=\language6
+\l@welsh=\language7
+\l@ibycus=\language8
+\l@uppersorbian=\language9
+\l@churchslavonic=\language10
+\l@liturgicallatin=\language11
+\l@albanian=\language12
+\l@tamil=\language13
+\l@pinyin=\language14
+\l@swedish=\language15
+\l@dutch=\language16
+\l@bengali=\language17
+\l@panjabi=\language18
+\l@swissgerman=\language19
+\l@portuguese=\language20
+\l@thai=\language21
+\l@macedonian=\language22
+\l@turkish=\language23
+\l@mongolian=\language24
+\l@turkmen=\language25
+\l@belarusian=\language26
+\l@latin=\language27
+\l@german=\language28
+\l@arabic=\language29
+\l@hindi=\language30
+\l@mongolianlmc=\language31
+\l@italian=\language32
+\l@irish=\language33
+\l@friulan=\language34
+\l@ethiopic=\language35
+\l@lithuanian=\language36
+\l@farsi=\language37
+\l@greek=\language38
+\l@malayalam=\language39
+\l@slovak=\language40
+\l@vietnamese=\language41
+\l@hungarian=\language42
+\l@basque=\language43
+\l@assamese=\language44
+\l@serbianc=\language45
+\l@hebrew=\language46
+\l@serbian=\language47
+\l@esperanto=\language48
+\l@french=\language49
+\l@monogreek=\language50
+\l@slovenian=\language51
+\l@telugu=\language52
+\l@bokmal=\language53
+\l@catalan=\language54
+\l@russian=\language55
+\l@marathi=\language56
+\l@kannada=\language57
+\l@coptic=\language58
+\l@ukenglish=\language59
+\l@usenglishmax=\language60
+\l@armenian=\language61
+\l@ngerman-x-2024-02-28=\language62
+\l@czech=\language63
+\l@romansh=\language64
+\l@indonesian=\language65
+\l@bulgarian=\language66
+\l@occitan=\language67
+\l@pali=\language68
+\l@georgian=\language69
+\l@romanian=\language70
+\l@sanskrit=\language71
+\l@gujarati=\language72
+\l@ancientgreek=\language73
+\l@oriya=\language74
+\l@schoolfinnish=\language75
+\l@german-x-2024-02-28=\language76
+\l@nynorsk=\language77
+\l@finnish=\language78
+\l@ngerman=\language79
+\l@polish=\language80
+\l@kurmanji=\language81
+\l@classiclatin=\language82
+\l@piedmontese=\language83
+\l@latvian=\language84
+\l@interlingua=\language85
+\l@danish=\language86
+\l@icelandic=\language87
+\l@spanish=\language88
+\l@afrikaans=\language89
+\l@galician=\language90
+\babelcatcodetablenum=\catcodetable14
+\bbl@pattcodes=\catcodetable15
+)
+\babel@savecnt=\count283
 LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input li
 ne 2078.
 LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input li
@@ -48,13 +184,12 @@ LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?)
 on input line 2086.
 LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) 
 on input line 2111.
-\U@D=\dimen149
-\l@unhyphenated=\language90
+\U@D=\dimen148
+\l@unhyphenated=\language91
 
-(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
-\bbl@readstream=\read2
-\bbl@dirlevel=\count286
-
+(/usr/share/texlive/texmf-dist/tex/generic/babel/luababel.def
+\bbl@attr@locale=\attribute4
+)
 (/usr/share/texlive/texmf-dist/tex/generic/babel/locale/es/babel-spanish.tex)
 Package babel Info: Importing font and identification data for spanish
 (babel)             from babel-es.ini. Reported on input line 4330.
@@ -62,95 +197,198 @@ Package babel Info: Importing font and identification data for spanish
 (/usr/share/texlive/texmf-dist/tex/generic/babel-spanish/spanish.ldf
 Language: spanish.ldf 2021/05/27 v5.0q Spanish support from the babel system
 \es@quottoks=\toks17
-\es@quotdepth=\count287
+\es@quotdepth=\count284
 Package babel Info: Making " an active character on input line 570.
 Package babel Info: Making . an active character on input line 675.
 Package babel Info: Making < an active character on input line 722.
 Package babel Info: Making > an active character on input line 722.
-))
+
+(/usr/share/texlive/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-es.tex
+UTF-8 Spanish hyphenation patterns
+(/usr/share/texlive/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-es.tex)))
+)
 LaTeX Encoding Info:    Redeclaring text command \guillemotleft (encoding OT1) 
 on input line 4.
 LaTeX Encoding Info:    Redeclaring text command \guillemotright (encoding OT1)
  on input line 4.
-
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count288
+ (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks18
 )
+\lst@mode=\count285
+\lst@gtempboxa=\box53
+\lst@token=\toks19
+\lst@length=\count286
+\lst@currlwidth=\dimen149
+\lst@column=\count287
+\lst@pos=\count288
+\lst@lostspace=\dimen150
+\lst@width=\dimen151
+\lst@newlines=\count289
+\lst@lineno=\count290
+\lst@maxwidth=\dimen152
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
+\c@lstnumber=\count291
+\lst@skipnumbers=\count292
+\lst@framebox=\box54
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2025/11/14 1.11b listings configuration
+))
+Package: listings 2025/11/14 1.11b (Carsten Heinz)
+
+==> First Aid for listings.sty no longer applied!
+    Expected:
+        2024/09/23 1.10c (Carsten Heinz)
+    but found:
+        2025/11/14 1.11b (Carsten Heinz)
+    so I'm assuming it got fixed.
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-luatex.def
+File: l3backend-luatex.def 2025-10-09 L3 backend support: PDF output (LuaTeX)
+\l__color_backend_stack_int=\count293
+Inserting `l3color' in `luaotfload.parse_color'.)
 (./TP1.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 Package babel Info: 'spanish' activates 'spanish' shorthands.
 (babel)             Reported on input line 8.
 )
-\openout1 = `TP1.aux'.
+\openout1 = TP1.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Info: Redefining \. on input line 5.
-LaTeX Info: Redefining \% on input line 5.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Info: Redefining \. on input line 6.
+LaTeX Info: Redefining \% on input line 6.
+\c@lstlisting=\count294
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 8
+.
+ (/usr/share/texmf/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 7.
+(Font)              <14.4> on input line 8.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 7.
+(Font)              <7> on input line 8.
 
 
 LaTeX Warning: No \author given.
 
-[1
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
+9.
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/
-dvips/cm-super/cm-super-t1.enc}] [2]
-Overfull \hbox (7.8783pt too wide) in paragraph at lines 123--124
-[]\T1/cmr/m/n/10 Mencione y ex-pli-que la es-truc-tu-ra b�-si-ca del Sis-te-ma 
-Ope-ra-ti-vo GNU/Linux. 
- []
-
-[3]
-Overfull \hbox (87.76157pt too wide) in paragraph at lines 153--154
-\T1/cmr/m/n/10 /boot se pue-de te-ner: \T1/cmtt/m/n/10 vmlinuz, vmlinuz-7.0.0-2
-9-generic, vmlinuz-7.0.0-30-generic,
- []
-
-[4{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [5] [6]
-Overfull \hbox (9.18353pt too wide) in paragraph at lines 335--336
-[]\T1/cmr/m/n/10 �Cu�ntas par-ti-cio-nes son ne-ce-sa-rias co-mo m�-ni-mo pa-ra
- ins-ta-lar GNU/Linux?
- []
-
-[7] [8] [9]
-Overfull \hbox (3.07106pt too wide) in paragraph at lines 502--503
-[]\T1/cmr/m/n/10 el ges-tor de arran-que car-ga el ker-nel del SO, y a me-nu-do
- un \T1/cmr/m/it/10 initrd/initramfs\T1/cmr/m/n/10 . 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5] [6] [7] [8
+]
+Missing character: There is no “ (U+201C) in font ec-lmr10!
+Missing character: There is no ” (U+201D) in font ec-lmr10!
+Missing character: There is no “ (U+201C) in font ec-lmr10!
+Missing character: There is no ” (U+201D) in font ec-lmr10!
+Missing character: There is no “ (U+201C) in font ec-lmr10!
+Missing character: There is no ” (U+201D) in font ec-lmr10!
+[9
+Missing character: There is no “ (U+201C) in font ec-lmr10!
+Missing character: There is no ” (U+201D) in font ec-lmr10!
+]
+Overfull \hbox (3.14972pt too wide) in paragraph at lines 668--670
+[]\T1/lmr/m/n/10 el ges-tor de arran-que car-ga el ker-nel del SO, y a me-nu-do un \T1/lmr/m/it/10 initrd/initramfs\T1/lmr/m/n/10 . 
  []
 
 [10]
-Overfull \hbox (10.67465pt too wide) in paragraph at lines 544--545
-[]\T1/cmr/m/n/10 Inicio del apa-ga-do: el usua-rio eje-cu-ta un co-man-do de ap
-a-ga-do, \T1/cmtt/m/n/10 shutdown
+Overfull \hbox (10.7489pt too wide) in paragraph at lines 727--730
+[]\T1/lmr/m/n/10 Ini-cio del apa-ga-do: el usua-rio eje-cu-ta un co-man-do de ap
+a-ga-do, \T1/lmtt/m/n/10 shutdown
  []
 
 [11]
-Overfull \hbox (38.16257pt too wide) in paragraph at lines 623--624
-[]\T1/cmr/m/n/10 Las p�-gi-nas es-t�n guar-da-das en \T1/cmtt/m/n/10 /usr/share
-/man/ \T1/cmr/m/n/10 y el eje-cu-ta-ble en \T1/cmtt/m/n/10 /usr/bin/man\T1/cmr/
-m/n/10 . 
+Overfull \hbox (38.3943pt too wide) in paragraph at lines 834--836
+[]\T1/lmr/m/n/10 Las pá-gi-nas es-tán guar-da-das en \T1/lmtt/m/n/10 /usr/shar
+e/man/ \T1/lmr/m/n/10 y el eje-cu-ta-ble en \T1/lmtt/m/n/10 /usr/bin/man\T1/lmr
+/m/n/10 . 
  []
 
-[12] (./TP1.aux
+
+Overfull \hbox (48.35951pt too wide) in paragraph at lines 871--873
+[]\T1/lmtt/m/n/10 at\T1/lmr/m/n/10 : eje-cu-ta un co-man-do en uin mo-men-to es-
+pe-ci-fi-ca-do. Ej \T1/lmtt/m/n/10 at -f /ruta/al/script.sh
+ []
+
+[12] [13] [14] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+)
+Overfull \hbox (10.26535pt too wide) in paragraph at lines 1084--1085
+[]\T1/lmr/m/n/10 Se al-ma-ce-nan prin-ci-pal-men-te en \T1/lmr/bx/it/10 /etc/ini
+t.d \T1/lmr/m/n/10 por ejem-plo \T1/lmtt/m/n/10 /etc/init.d/ssh\T1/lmr/m/n/10 .
+ []
+
+
+Overfull \hbox (16.29181pt too wide) in paragraph at lines 1084--1085
+\T1/lmr/m/n/10 Y tam-bién es-tán los en-la-ces sim-bó-li-cos \T1/lmr/bx/it/1
+0 /etc/rcX.d \T1/lmr/m/n/10 por ejem-plo \T1/lmtt/m/n/10 /etc/rc3.d/\T1/lmr/m/n
+/10 . 
+ []
+
+[15]
+Missing character: There is no ​ (U+200B) in font ec-lmr10!
+Missing character: There is no ​ (U+200B) in font ec-lmr10!
+Missing character: There is no ​ (U+200B) in font ec-lmr10!
+Missing character: There is no ​ (U+200B) in font ec-lmr10!
+Missing character: There is no ​ (U+200B) in font ec-lmr10!
+Missing character: There is no ​ (U+200B) in font ec-lmr10!
+
+Overfull \hbox (3.37881pt too wide) in paragraph at lines 1154--1155
+[]\T1/lmr/m/n/10 ges-tio-nar \T1/lmr/m/it/10 tar-gets\T1/lmr/m/n/10 : \T1/lmtt/
+m/n/10 systemctl get-default\T1/lmr/m/n/10 ; \T1/lmtt/m/n/10 systemctl set-defau
+lt
+ []
+
+
+Overfull \hbox (15.99925pt too wide) in paragraph at lines 1156--1157
+[]\T1/lmr/m/n/10 apa-gar, re-ini-ciar o sus-pen-der: \T1/lmtt/m/n/10 systemctl 
+poweroff\T1/lmr/m/n/10 ; \T1/lmtt/m/n/10 systemctl reboot\T1/lmr/m/n/10 ;
+ []
+
+Missing character: There is no ​ (U+200B) in font ec-lmr10!
+Missing character: There is no ​ (U+200B) in font ec-lmr10!
+[16
+Missing character: There is no ​ (U+200B) in font ec-lmr10!
+Missing character: There is no ​ (U+200B) in font ec-lmr10!
+Missing character: There is no ​ (U+200B) in font ec-lmr10!
+]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 1179.
+
+Missing character: There is no ​ (U+200B) in font ec-lmr10!
+Missing character: There is no ​ (U+200B) in font ec-lmr10!
+[17
+Missing character: There is no ​ (U+200B) in font ec-lmr10!
+Missing character: There is no ​ (U+200B) in font ec-lmr10!
+] (./TP1.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 )
@@ -158,25 +396,28 @@ LaTeX Info: Redefining \% on input line 8.
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
- ) 
-Here is how much of TeX's memory you used:
- 2325 strings out of 467533
- 37155 string characters out of 5422138
- 457993 words of memory out of 5000000
- 31276 multiletter control sequences out of 15000+600000
- 639222 words of font info for 58 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 38i,9n,45p,928b,403s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/
-fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/c
-m-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1000.pfb
-></usr/share/texmf/fonts/type1/public/cm-super/sfsx1728.pfb></usr/share/texmf/f
-onts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm
--super/sftt1000.pfb>
-Output written on TP1.pdf (12 pages, 173994 bytes).
-PDF statistics:
- 83 PDF objects out of 1000 (max. 8388607)
- 53 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+)
+
+Here is how much of LuaTeX's memory you used:
+ 4284 strings out of 476076
+ 100000,794899 words of node,token memory allocated
+ 456 words of node memory still in use:
+   4 hlist, 1 vlist, 1 rule, 4 glue, 3 kern, 1 glyph, 9 attribute, 51 glue_spec,
+ 5 attribute_list, 1 write nodes
+   avail lists: 2:1143,3:178,4:40,5:385,6:57,7:5898,8:1,9:1068,10:22,11:730
+ 26722 multiletter control sequences out of 65536+600000
+ 44 fonts using 2833471 bytes
+ 41i,9n,62p,369b,666s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
+/lm/lm-ts1.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/te
+xmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lm
+r10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts
+/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb
+></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
+Output written on TP1.pdf (17 pages, 215400 bytes).
+
+PDF statistics: 90 PDF objects out of 1000 (max. 8388607)
+ 63 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 131072)
+ 1 words of extra memory for PDF output out of 10000 (max. 100000000)
 

@@ -1,252 +1,348 @@
 \documentclass[10pt,a4paper]{paper}
 \usepackage[T1]{fontenc}
 \usepackage[spanish]{babel}
+\usepackage{listings}
 \title{TP1}
 \begin{document}
-
-\maketitle
+	
+	\maketitle
 	
 	
 	
 	
-		
-\paragraph{1.a}
 	
-\begin{itemize}
-	\item Mencione y explique las características más relevantes de GNU/Linux.
-
-
-	\item GNU/Linux es un sistema operativo libre que surge de la combinación del núcleo Linux con el sistema GNU. 
+	\paragraph{1.a}
 	
-	Está compuesto principalmente por un kernel, un sistema de archivos jerárquico y un intérprete de comandos. El kernel es monolítico modular. Es decir se comporta como un único programa en memoria, pero tiene capacidad de cargar y descargar módulos mientras se ejecuta. El kernel se distribuye bajo la licencia libre GPLv2.
-	
-	Es un sistema operativo multiusuario y multitarea escrito principalmente en C y soporta varias arquitecturas.
-	
-	El sistema de archivos provee un modelo de permisos basado en tres categorías, el usuario, su grupo y los demás.
-
-\end{itemize}
-
-
-		
-\paragraph{1.b}
-
-\begin{itemize}
-	\item Mencione otros sistemas operativos y compárelos con GNU/Linux en cuanto a los puntos mencionados en el inciso a.
-	
-	\item Windows es un sistema operativo comercial privativo de código cerrado. Además, Windows es desarrollado principalmente por Microsoft, tanto el kernel como sus utilidades de usuario. El kernel de Windows tiene incorporado más elementos que en Linux son programas de usuario. Pero es también híbrido. Windows esta escrito en C principalmente pero al ser de código cerrado su portabilidad es más limitada en la practica. El sistema de archivos que provee Windows es muy diferente al modelo de Linux en estructura y funcionalidad. Windows soporta FAT, exFAT, y NTFS pero Linux tiene una capa de abstracción, VFS, que permite incorporar nuevos y soporta bastantes.
-	
-	\item Android esta basado en el kernel Linux y es desarrollado por Google y otros, si bien es de código abierto, esta optimizado para las pantallas táctiles y dispositivos ARM. Esto limita su portabilidad en la practica si ademas tenemos en cuenta que sus utilidades de usuario son limitadas. Android usa las utilidades de usuario \texttt{Toybox}, entre otras, que se caracterizan por ser bastante mínimas en comparación a sistemas GNU.
-\end{itemize}
-
-	
-
-
-\paragraph{1.c}
-
-\begin{itemize}
-	\item ¿Qué es GNU?
-	
-	\item GNU es un sistema operativo tipo Unix. desarrollado para el proyecto GNU y bajo el auspicio de la FSF. Formado principalmente de software libre bajo términos \textit{copyleft} como GPL. GNU significa \textit{GNU is not Unix}, que destaca la diferencia entre GNU y Unix, siendo el primero libre y el segundo privativo. El kernel del proyecto, GNU Hurd, no llegó a completarse. Algunos componentes populares son \texttt{Bash, coreutils, gcc y glibc}.
-\end{itemize}
-
-
-\paragraph{1.d}
-
-\begin{itemize}
-	\item Indique una breve historia sobre la evolución del proyecto GNU.
-	
-	\item Richard Stallman inicia el proyecto en 1983. En 1985 crea la FSF que proporcionará soporte técnico y legal al proyecto GNU. Para el 1990 se han creado GCC, Bash e Emacs y la mayor parte de bibliotecas y utilidades que conformarían el SO, pero no se tiene un kernel funcional. Durante los 80 el proyecto GNU evalúa, e intenta adaptar kernels existentes. A principios de los 90 se opta por adaptar Mach de la Universidad Carnegie Mellon, que se denominaría Hurd. Sin embargo, este se demoraría y su adopción es limitada. De forma autónoma empieza el desarrollo de un kernel por el informático finlandés Linus Torvalds en 1991. Torvalds adoptaría la licencia GPL para su proyecto en el año 1992. Esto precipita el desarrollo del kernel que tomaría el nombre Linux, y que da lugar a la adopción de este junto a las herramientas GNU integradas en un SO libre que predomina hasta hoy.
-\end{itemize}
-
-
-\paragraph{1.e}
-
-\begin{itemize}
-	\item Explique qué es la multitarea, e indique si GNU/Linux hace uso de ella.
-	
-	\item La multitarea es la capacidad de un SO de conmutar y administrar múltiples tareas, es decir, procesos e hilos, de forma concurrente. GNU/Linux es multitarea. Específicamente usa multitarea apropiativa: el kernel puede interrumpir una tarea en ejecución para asignar tiempo de CPU a otra.
-\end{itemize}
-
-\paragraph{1.f}
-
-\begin{itemize}
-	\item ¿Qué es POSIX?
-	
-	\item POSIX es una norma de la IEEE que define una interfaz estándar del SO y su entorno, incluyendo al intérprete de comandos y programas de utilidades con el objetivo de soportar la portabilidad de aplicaciones, esta inspirada en interfaces, intérpretes de comandos y utilidades comunes en versiones de UNIX. Hoy en día muchos SO cumplen parcial o totalmente con algún estándar POSIX.
-\end{itemize}
-
-
-\paragraph{2.a}
-
-\begin{itemize}
-	\item ¿Qué es una distribución de GNU/Linux? Nombre al menos 4 distribuciones de GNU/Linux y cite diferencias básicas entre ellas.
-	
-	\item Una distribución de GNU/Linux es un gran conjunto de programas binarios empaquetados para ser distribuidos. En una distribución generalmente se incluyen programas de instalación que facilitan el proceso de configuración e instalación del SO. 
-	
-	Algunas distribuciones son Debian, Ubuntu, Fedora, Arch. las principales diferencias son sus administradores de paquetes, los mecanismos de actualización y las metodologías de desarrollo. 
-\end{itemize}
-
-
-\paragraph{2.b}
-
-\begin{itemize}
-	\item ¿En qué se diferencia una distribución de otra?
-	
-	\item Generalmente usan gestores de paquetes diferentes. Tienen un modelo de lanzamientos diferente, es diferente el propósito que cumplen, el método de instalación, o su filosofía. 
-\end{itemize}
-
-
-\paragraph{2.c}
-
-\begin{itemize}
-	\item ¿Qué es Debian? Acceda al sitio https://www.debian.org/ e indique cuáles son los objetivos del proyecto y una breve cronología del mismo.
-	
-	\item Debian es una distribución GNU/Linux desarrollada por el proyecto Debian. Entre sus objetivos se encuentran: el crear un sistema operativo completamente libre y accesible a todos, mantener el software totalmente libre, ser estable, seguro y de alta calidad, ser universal y servir de base para otras distribuciones y contribuir de vuelta a la comunidad de software libre.
-	
-	Históricamente Debian, fundado en 1993 por Ian Murdock tiene su primera versión 1.1 llamada Debian Buzz en el año 1996. Actualmente nos encontramos en su versión 12 Debian Bookworm que fue lanzada en 2023. 
-\end{itemize}
-
-
-\paragraph{3.a}
-
-\begin{itemize}
-	\item Nombre cuáles son los componentes fundamentales de GNU/Linux.
-	
-	
-	\item Un SO GNU/Linux está compuesto principalmente por el kernel Linux, una biblioteca C estándar como glibc, utilidades de usuario GNU, un intérprete de comandos como Bash, un gestor de arranque como GRUB, un sistema de inicio como systemd, un sistema de archivos,  y otros componentes de bajo nivel como PulseAudio, Mesa, etc. según su necesidad.
-\end{itemize}
-
-
-\paragraph{3.b}
-
-\begin{itemize}
-	\item Mencione y explique la estructura básica del Sistema Operativo GNU/Linux.
-	
-	
-	\item Un SO GNU/Linux tiene una estructura en capas. En la capa más interna está el kernel, que se ejecuta en modo privilegiado. Por encima de este están los manejadores, que a veces son parte del kernel. Encima está la biblioteca C estándar. Esta última está en el espacio de usuario junto con las demás aplicaciones de usuario como las utilidades GNU, bash y demás comandos.
-\end{itemize}
-
-
-
-\paragraph{4.a}
-
-\begin{itemize}
-	\item ¿Cuáles son las funciones principales del kernel?
-	
-	\item Las funciones principales del kernel son:
 	\begin{itemize}
-		\item Proveer a los usuarios de abstracciones útiles por medio de las llamadas al sistema.
+		\item Mencione y explique las características más relevantes de GNU/Linux.
 		
-		\item Administrar los recursos de hardware de forma equitativa, eficiente y segura según se requiera.
 		
-		\item Gestionar peticiones de entrada/salida de los procesos.
+		\item GNU/Linux es un sistema operativo libre que surge de la combinación del
+		núcleo Linux con el sistema GNU. 
+		
+		Está compuesto principalmente por un kernel, un sistema de archivos jerárquico
+		y un intérprete de comandos. El kernel es monolítico modular. Es decir se
+		comporta como un único programa en memoria, pero tiene capacidad de cargar y
+		descargar módulos mientras se ejecuta. El kernel se distribuye bajo la licencia
+		libre GPLv2.
+		
+		Es un sistema operativo multiusuario y multitarea escrito principalmente en C y
+		soporta varias arquitecturas.
+		
+		El sistema de archivos provee un modelo de permisos basado en tres categorías,
+		el usuario, su grupo y los demás.
+		
 	\end{itemize}
-\end{itemize}
-
-
-\paragraph{4.b}
-
-\begin{itemize}
-	\item ¿Es posible tener más de un kernel de GNU/Linux instalado en la misma máquina? (ayuda /boot).
 	
 	
-	\item Si es posible, como ejemplo en una distribución Ubuntu en el directorio /boot se puede tener: \texttt{vmlinuz, vmlinuz-7.0.0-29-generic, vmlinuz-7.0.0-30-generic, vmlinuz.old}. Todas son imágenes del kernel.
-\end{itemize}
-
-
-\paragraph{4.c}
-
-\begin{itemize}
-	\item ¿En qué directorio se encuentra ubicado el kernel?
+	
+	\paragraph{1.b}
+	
+	\begin{itemize}
+		\item Mencione otros sistemas operativos y compárelos con GNU/Linux en cuanto a
+		los puntos mencionados en el inciso a.
+		
+		\item Windows es un sistema operativo comercial privativo de código cerrado.
+		Además, Windows es desarrollado principalmente por Microsoft, tanto el kernel
+		como sus utilidades de usuario. El kernel de Windows tiene incorporado más
+		elementos que en Linux son programas de usuario. Pero es también híbrido.
+		Windows esta escrito en C principalmente pero al ser de código cerrado su
+		portabilidad es más limitada en la practica. El sistema de archivos que provee
+		Windows es muy diferente al modelo de Linux en estructura y funcionalidad.
+		Windows soporta FAT, exFAT, y NTFS pero Linux tiene una capa de abstracción,
+		VFS, que permite incorporar nuevos y soporta bastantes.
+		
+		\item Android esta basado en el kernel Linux y es desarrollado por Google y
+		otros, si bien es de código abierto, esta optimizado para las pantallas táctiles
+		y dispositivos ARM. Esto limita su portabilidad en la practica si ademas tenemos
+		en cuenta que sus utilidades de usuario son limitadas. Android usa las
+		utilidades de usuario \texttt{Toybox}, entre otras, que se caracterizan por ser
+		bastante mínimas en comparación a sistemas GNU.
+	\end{itemize}
 	
 	
-	\item Como se insinuó está en \texttt{/boot}. Estas entradas son las que es posible seleccionar desde el menú que presenta normalmente GRUB.
-\end{itemize}
-
-
-
-\paragraph{5.a}
-
-\begin{itemize}
-	\item ¿Qué es y cuáles son las funciones del intérprete de comandos o \textit{shell}?
 	
 	
-	\item El intérprete de comandos es un programa que presenta una interfaz al usuario para poder interactuar con el SO. Una shell permite ejecutar programas en el SO, como comandos y aplicaciones. Además Bash, por ejemplo, soporta redireccionamiento, tuberías, alias, historial, etc.
-\end{itemize}
-
-\paragraph{5.b}
-
-\begin{itemize}
-	\item Investigue y mencione al menos 3 intérpretes de comandos que existen para GNU/Linux y compárelos entre ellos.
+	\paragraph{1.c}
+	
+	\begin{itemize}
+		\item ¿Qué es GNU?
+		
+		\item GNU es un sistema operativo tipo Unix. desarrollado para el proyecto GNU
+		y bajo el auspicio de la FSF. Formado principalmente de software libre bajo
+		términos \textit{copyleft} como GPL. GNU significa \textit{GNU is not Unix}, que
+		destaca la diferencia entre GNU y Unix, siendo el primero libre y el segundo
+		privativo. El kernel del proyecto, GNU Hurd, no llegó a completarse. Algunos
+		componentes populares son \texttt{Bash, coreutils, gcc y glibc}.
+	\end{itemize}
 	
 	
-	\item Tres shells son csh, zsh y bash. Hacer una comparacion relevante de diferencias me es imposible en este momento.:(
-\end{itemize}
-
-
-
-\paragraph{5.c}
-
-\begin{itemize}
-	\item ¿Dónde se ubican (path) los comandos propios y externos al Shell?
+	\paragraph{1.d}
 	
-	\item Los comandos propios de la shell son parte de esta y se ejecutan internamente,  por ej. cd, alias, etc. 
+	\begin{itemize}
+		\item Indique una breve historia sobre la evolución del proyecto GNU.
+		
+		\item Richard Stallman inicia el proyecto en 1983. En 1985 crea la FSF que
+		proporcionará soporte técnico y legal al proyecto GNU. Para el 1990 se han
+		creado GCC, Bash e Emacs y la mayor parte de bibliotecas y utilidades que
+		conformarían el SO, pero no se tiene un kernel funcional. Durante los 80 el
+		proyecto GNU evalúa, e intenta adaptar kernels existentes. A principios de los
+		90 se opta por adaptar Mach de la Universidad Carnegie Mellon, que se
+		denominaría Hurd. Sin embargo, este se demoraría y su adopción es limitada. De
+		forma autónoma empieza el desarrollo de un kernel por el informático finlandés
+		Linus Torvalds en 1991. Torvalds adoptaría la licencia GPL para su proyecto en
+		el año 1992. Esto precipita el desarrollo del kernel que tomaría el nombre
+		Linux, y que da lugar a la adopción de este junto a las herramientas GNU
+		integradas en un SO libre que predomina hasta hoy.
+	\end{itemize}
 	
 	
-	En cambio los externos se ubican en archivos que la shell busca en los directorios de la v. de entorno \texttt{PATH}, típicamente en \texttt{/bin}, \texttt{/usr/bin}. Entre otros.
+	\paragraph{1.e}
+	
+	\begin{itemize}
+		\item Explique qué es la multitarea, e indique si GNU/Linux hace uso de ella.
+		
+		\item La multitarea es la capacidad de un SO de conmutar y administrar
+		múltiples tareas, es decir, procesos e hilos, de forma concurrente. GNU/Linux es
+		multitarea. Específicamente usa multitarea apropiativa: el kernel puede
+		interrumpir una tarea en ejecución para asignar tiempo de CPU a otra.
+	\end{itemize}
+	
+	\paragraph{1.f}
+	
+	\begin{itemize}
+		\item ¿Qué es POSIX?
+		
+		\item POSIX es una norma de la IEEE que define una interfaz estándar del SO y
+		su entorno, incluyendo al intérprete de comandos y programas de utilidades con
+		el objetivo de soportar la portabilidad de aplicaciones, esta inspirada en
+		interfaces, intérpretes de comandos y utilidades comunes en versiones de UNIX.
+		Hoy en día muchos SO cumplen parcial o totalmente con algún estándar POSIX.
+	\end{itemize}
 	
 	
-\end{itemize}
-
-
-\paragraph{5.d}
-
-\begin{itemize}
-	\item ¿Por qué considera que la Shell no es parte del Kernel de GNU/Linux?
+	\paragraph{2.a}
 	
-	\item La shell no forma parte del kernel por razones de diseño. No existe necesidad de que esta forme parte del kernel. 
+	\begin{itemize}
+		\item ¿Qué es una distribución de GNU/Linux? Nombre al menos 4 distribuciones
+		de GNU/Linux y cite diferencias básicas entre ellas.
+		
+		\item Una distribución de GNU/Linux es un gran conjunto de programas binarios
+		empaquetados para ser distribuidos. En una distribución generalmente se incluyen
+		programas de instalación que facilitan el proceso de configuración e instalación
+		del SO. 
+		
+		Algunas distribuciones son Debian, Ubuntu, Fedora, Arch. las principales
+		diferencias son sus administradores de paquetes, los mecanismos de actualización
+		y las metodologías de desarrollo. 
+	\end{itemize}
 	
-	Para empezar, la shell no interactúa con hardware, puede usar \texttt{glibc} y ejecutar sus comandos, etc. Es decir, la shell es un programa de usuario que aprovecha las abstracciones del kernel y otras bibliotecas, por esto, no es necesario que forme parte de este.	
-\end{itemize}
-
-
-
-
-
-\paragraph{5.e}
-
-\begin{itemize}
-	\item ¿Es posible definir una distinta para cada usuario?
 	
-	\item Si, cada usuario tiene definida una shell de inicio que se guarda en el archivo \texttt{/etc/passwd}.
-\end{itemize}
-
-
-
-\paragraph{6.a}
-
-
-\begin{itemize}
-	\item ¿Qué es un sistema de archivos en Linux?
+	\paragraph{2.b}
 	
-	\item Un sistema de archivos es la estructura y el conjunto de reglas que utiliza el sistema operativo para organizar, almacenar y recuperar datos en un dispositivo de almacenamiento. 
+	\begin{itemize}
+		\item ¿En qué se diferencia una distribución de otra?
+		
+		\item Generalmente usan gestores de paquetes diferentes. Tienen un modelo de
+		lanzamientos diferente, es diferente el propósito que cumplen, el método de
+		instalación, o su filosofía. 
+	\end{itemize}
 	
-	Caracterizado principalmente por presentar una jerarquía de árbol único que parte del directorio raíz, donde todos los dispositivos y particiones se montan como sub-directorios. 
-\end{itemize}
-
-
-
-\paragraph{6.b}
-
-
-\begin{itemize}
-	\item ¿Cuál es la estructura básica de los File System en GNU/Linux? Mencione los directorios más importantes e indique qué tipo de información se encuentra en	ellos. ¿A qué hace referencia la sigla FHS?
 	
-	\item La estructura básica de un sistema de archivos en GNU/Linux es la de árbol. Con su raíz en \texttt{/}. 
+	\paragraph{2.c}
 	
-	Sus directorios más importantes son:
+	\begin{itemize}
+		\item ¿Qué es Debian? Acceda al sitio https://www.debian.org/ e indique cuáles
+		son los objetivos del proyecto y una breve cronología del mismo.
+		
+		\item Debian es una distribución GNU/Linux desarrollada por el proyecto Debian.
+		Entre sus objetivos se encuentran: el crear un sistema operativo completamente
+		libre y accesible a todos, mantener el software totalmente libre, ser estable,
+		seguro y de alta calidad, ser universal y servir de base para otras
+		distribuciones y contribuir de vuelta a la comunidad de software libre.
+		
+		Históricamente Debian, fundado en 1993 por Ian Murdock tiene su primera versión
+		1.1 llamada Debian Buzz en el año 1996. Actualmente nos encontramos en su
+		versión 12 Debian Bookworm que fue lanzada en 2023. 
+	\end{itemize}
+	
+	
+	\paragraph{3.a}
+	
+	\begin{itemize}
+		\item Nombre cuáles son los componentes fundamentales de GNU/Linux.
+		
+		
+		\item Un SO GNU/Linux está compuesto principalmente por el kernel Linux, una
+		biblioteca C estándar como glibc, utilidades de usuario GNU, un intérprete de
+		comandos como Bash, un gestor de arranque como GRUB, un sistema de inicio como
+		systemd, un sistema de archivos,  y otros componentes de bajo nivel como
+		PulseAudio, Mesa, etc. según su necesidad.
+	\end{itemize}
+	
+	
+	\paragraph{3.b}
+	
+	\begin{itemize}
+		\item Mencione y explique la estructura básica del Sistema Operativo GNU/Linux.
+		
+		
+		\item Un SO GNU/Linux tiene una estructura en capas. En la capa más interna
+		está el kernel, que se ejecuta en modo privilegiado. Por encima de este están
+		los manejadores, que a veces son parte del kernel. Encima está la biblioteca C
+		estándar. Esta última está en el espacio de usuario junto con las demás
+		aplicaciones de usuario como las utilidades GNU, bash y demás comandos.
+	\end{itemize}
+	
+	
+	
+	\paragraph{4.a}
+	
+	\begin{itemize}
+		\item ¿Cuáles son las funciones principales del kernel?
+		
+		\item Las funciones principales del kernel son:
+		\begin{itemize}
+			\item Proveer a los usuarios de abstracciones útiles por medio de las llamadas
+			al sistema.
+			
+			\item Administrar los recursos de hardware de forma equitativa, eficiente y
+			segura según se requiera.
+			
+			\item Gestionar peticiones de entrada/salida de los procesos.
+		\end{itemize}
+	\end{itemize}
+	
+	
+	\paragraph{4.b}
+	
+	\begin{itemize}
+		\item ¿Es posible tener más de un kernel de GNU/Linux instalado en la misma
+		máquina? (ayuda /boot).
+		
+		
+		\item Si es posible, como ejemplo en una distribución Ubuntu en el directorio
+		/boot se puede tener: \texttt{vmlinuz, vmlinuz-7.0.0-29-generic,
+			vmlinuz-7.0.0-30-generic, vmlinuz.old}. Todas son imágenes del kernel.
+	\end{itemize}
+	
+	
+	\paragraph{4.c}
+	
+	\begin{itemize}
+		\item ¿En qué directorio se encuentra ubicado el kernel?
+		
+		
+		\item Como se insinuó está en \texttt{/boot}. Estas entradas son las que es
+		posible seleccionar desde el menú que presenta normalmente GRUB.
+	\end{itemize}
+	
+	
+	
+	\paragraph{5.a}
+	
+	\begin{itemize}
+		\item ¿Qué es y cuáles son las funciones del intérprete de comandos o
+		\textit{shell}?
+		
+		
+		\item El intérprete de comandos es un programa que presenta una interfaz al
+		usuario para poder interactuar con el SO. Una shell permite ejecutar programas
+		en el SO, como comandos y aplicaciones. Además Bash, por ejemplo, soporta
+		redireccionamiento, tuberías, alias, historial, etc.
+	\end{itemize}
+	
+	\paragraph{5.b}
+	
+	\begin{itemize}
+		\item Investigue y mencione al menos 3 intérpretes de comandos que existen para
+		GNU/Linux y compárelos entre ellos.
+		
+		
+		\item Tres shells son csh, zsh y bash. Hacer una comparacion relevante de
+		diferencias me es imposible en este momento.:(
+	\end{itemize}
+	
+	
+	
+	\paragraph{5.c}
+	
+	\begin{itemize}
+		\item ¿Dónde se ubican (path) los comandos propios y externos al Shell?
+		
+		\item Los comandos propios de la shell son parte de esta y se ejecutan
+		internamente,  por ej. cd, alias, etc. 
+		
+		
+		En cambio los externos se ubican en archivos que la shell busca en los
+		directorios de la v. de entorno \texttt{PATH}, típicamente en \texttt{/bin},
+		\texttt{/usr/bin}. Entre otros.
+		
+		
+	\end{itemize}
+	
+	
+	\paragraph{5.d}
+	
+	\begin{itemize}
+		\item ¿Por qué considera que la Shell no es parte del Kernel de GNU/Linux?
+		
+		\item La shell no forma parte del kernel por razones de diseño. No existe
+		necesidad de que esta forme parte del kernel. 
+		
+		Para empezar, la shell no interactúa con hardware, puede usar \texttt{glibc} y
+		ejecutar sus comandos, etc. Es decir, la shell es un programa de usuario que
+		aprovecha las abstracciones del kernel y otras bibliotecas, por esto, no es
+		necesario que forme parte de este.	
+	\end{itemize}
+	
+	
+	
+	
+	
+	\paragraph{5.e}
+	
+	\begin{itemize}
+		\item ¿Es posible definir una distinta para cada usuario?
+		
+		\item Si, cada usuario tiene definida una shell de inicio que se guarda en el
+		archivo \texttt{/etc/passwd}.
+	\end{itemize}
+	
+	
+	
+	\paragraph{6.a}
+	
+	
+	\begin{itemize}
+		\item ¿Qué es un sistema de archivos en Linux?
+		
+		\item Un sistema de archivos es la estructura y el conjunto de reglas que
+		utiliza el sistema operativo para organizar, almacenar y recuperar datos en un
+		dispositivo de almacenamiento. 
+		
+		Caracterizado principalmente por presentar una jerarquía de árbol único que
+		parte del directorio raíz, donde todos los dispositivos y particiones se montan
+		como sub-directorios. 
+	\end{itemize}
+	
+	
+	
+	\paragraph{6.b}
+	
+	
+	\begin{itemize}
+		\item ¿Cuál es la estructura básica de los File System en GNU/Linux? Mencione
+		los directorios más importantes e indique qué tipo de información se encuentra
+		en	ellos. ¿A qué hace referencia la sigla FHS?
+		
+		\item La estructura básica de un sistema de archivos en GNU/Linux es la de
+		árbol. Con su raíz en \texttt{/}. 
+		
+		Sus directorios más importantes son:
 		\begin{enumerate}
-			\item \texttt{/bin}: a donde se almacenan los binarios de comandos accesibles a todos los usuarios.
+			\item \texttt{/bin}: a donde se almacenan los binarios de comandos accesibles
+			a todos los usuarios.
 			
 			\item \texttt{/boot}: archivos estáticos que carga el gestor de arranque.
 			
@@ -262,7 +358,8 @@
 			
 			\item \texttt{/mnt}: donde se montan temporalmente sistemas de archivos.
 			
-			\item \texttt{/proc}: Sistema de archivos virtual que contiene información de los procesos en ejecución y del kernel en tiempo real 
+			\item \texttt{/proc}: Sistema de archivos virtual que contiene información de
+			los procesos en ejecución y del kernel en tiempo real 
 			
 			\item \texttt{/root}: home del superusuario.
 			
@@ -274,356 +371,849 @@
 			
 			\item \texttt{/tmp}: archivos temporales.
 			
-			\item \texttt{/usr}: Almacena la mayoría de los programas, librerías, documentación y archivos de código fuente del sistema para los usuarios.
+			\item \texttt{/usr}: Almacena la mayoría de los programas, librerías,
+			documentación y archivos de código fuente del sistema para los usuarios.
 			
 			\item \texttt{/var}: logs, etc.
 		\end{enumerate}
 		
-	FHS, hace referencia a \textit{Filesystem Hierarchy Standard}, es un estándar que regula la ubicación de archivos y directorios en SO tipo Unix.  
-\end{itemize}
-
-
-\paragraph{6.c}
-\begin{itemize}
-	\item Mencione sistemas de archivos soportados por GNU/Linux
-	
-	\item Los principales sistemas de archivos modernos son \texttt{ext4, btrfs, y XFS}.
-\end{itemize}
-
-
-
-\paragraph{7.a}
-
-\begin{itemize}
-
-	\item Particiones: definición, tipos, ventajas y desventajas.
-		
-	Las particiones son divisiones lógicas de un medio de almacenamiento. El sistema operativo las trata como dispositivos independientes.
-		
-	Existen dos esquemas principales de particionado: \textbf{MBR} y \textbf{GPT}.
-	\begin{itemize}
-			\item \textbf{MBR}: soporta hasta 4 particiones primarias; para obtener más particiones se crea una partición extendida que contiene particiones lógicas. Está limitado a discos de hasta 2 TB.
-			\item \textbf{GPT}: no tiene el límite práctico de 4 particiones primarias, soporta discos de gran tamaño, incluye una copia de seguridad de la tabla de particiones y utiliza CRC para detectar corrupción.
-	\end{itemize}
-		
-	\textbf{Ventajas del particionado:}
-	\begin{itemize}
-		\item Aislamiento de fallos: si una partición se corrompe, las demás pueden permanecer intactas.
-		\item Posibilidad de instalar múltiples sistemas operativos.
-		\item Uso de diferentes sistemas de archivos según los requerimientos de cada partición.
-	\end{itemize}
-		
-	\textbf{Desventajas del particionado:}
-	\begin{itemize}
-		\item Poca flexibilidad por tener un tamaño fijo.
-		\item Posible desperdicio de espacio libre si las particiones no se dimensionan adecuadamente.
-		\item Redimensionar particiones puede implicar riesgos o requerir herramientas específicas.
-	\end{itemize}
-
-\end{itemize}
-
-\paragraph{7.b}
-\begin{itemize}
-	\item ¿Cómo se identifican las particiones en GNU/Linux? (Considere discos IDE, SCSI	y SATA).
-	
-	\item las particiones se identifican mediante archivos especiales ubicados en \texttt{/dev}. En el caso de IDE \texttt{hda, hdb}, etc. corresponden a discos y \texttt{hda1, hda2} se corresponden a particiones de \texttt{hda}. En el caso de SATA y SCSI se usa \texttt{sda, sdb}, etc. para discos y \texttt{sda1, sda2} para particiones.
-\end{itemize}
-
-
-\paragraph{7.c}
-\begin{itemize}
-	\item ¿Cuántas particiones son necesarias como mínimo para instalar GNU/Linux?	Nómbrelas indicando tipo de partición, identificación, tipo de File System y punto de montaje.
-	
-	\item Técnicamente la única partición imprescindible es la de la raíz. Que podría tener la identificación sda2 y  puede tener una variedad de sistemas de archivos, su punto de montaje es /. En sistemas UEFI se necesita una partición EFI. Que debe ser FAT32 y tiene punto de montaje /boot/efi. Opcionalmente se usa también una partición de intercambio.
-\end{itemize}
-
-
-
-
-
-\paragraph{7.d}
-\begin{itemize}
-	\item Dar ejemplos de diversos casos de particionamiento dependiendo del tipo de tarea que se deba realizar en su sistema operativo.
-	
-	\item En una estación de trabajo bastaría con separar /home y tener las particiones necesarias / y /boot/efi. Opcionalmente podemos tener swap.
-	
-	
-	En un servidor web podríamos separar /var y /tmp, además de separar /srv o /home para aislar logs, temporales y datos del servicio de la raíz.
-	
-	En un sistema embebido usualmente hay una raíz de solo lectura y algunas particiones de escritura para configuración o datos de aplicación.
-\end{itemize}
-
-
-
-\paragraph{7.e}
-\begin{itemize}
-	\item ¿Es posible visualizar particiones del tipo FAT y NTFS (que son de Windows) en GNU/Linux?
-	
-	\item Si, no solo es posible la lectura si no también la escritura. Además en el caso de FAT ademas este es el sistema de archivos obligatorio para la partición EFI. Por lo que la mayoría de distribuciones tienen una partición FAT.
-\end{itemize}
-
-
-\paragraph{7.f}
-\begin{itemize}
-	\item ¿Qué tipo de software para particionar existe? Menciónelos y compare.
-	
-	\item Principalmente están fdisk y gparted. Por un lado, fdisk es una de interfaz de texto que no formatea, no permite re dimensionamiento, pero, está disponible por defecto en la mayoría de distribuciones. Por otro lado, gparted es una utilidad gráfica que si hace formateo y re dimensiona particiones pero puede requerir instalación y un entorno gráfico.
-\end{itemize}
-
-
-
-\paragraph{8.a}
-\begin{itemize}
-	\item ¿Qué es el BIOS? ¿Qué tarea realiza?
-	
-	\item el BIOS de \textit{Basic I/O System}, es un programa que se ejecuta al arrancar una computadora x86 y se encarga principalmente de inicializar el hardware y cargar un gestor de arranque para que el SO tome el control.
-	
-	
-	Primero realiza un POST, \textit{power on self test} que verifica cuales dispositivos tiene disponibles la computadora y su funcionamiento. 
-	
-	Configura los dispositivos básicos según la configuración almacenada en su memoria.
-	
-	
-	Busca un dispositivo de almacenamiento que tenga un sector de arranque válido según su configuración
-	
-	
-	lee el primer sector físico de disco y carga el gestor de arranque transfiriéndole el control.
-	
-	Durante el arranque y incluso después ofrece rutinas para E/S, que permiten interactuar con el teclado, pantalla y discos.
-\end{itemize}
-
-
-
-\paragraph{8.b}
-\begin{itemize}
-	\item ¿Qué es UEFI? ¿Cuál es su función?
-	
-	\item UEFI de \textit{Unified Extensible Firmware Interface} es un estándar que regula la interfaz entre el firmware de la plataforma, hardware, y el SO durante el arranque.
-	
-	Su función principal es la de inicializar el hardware y cargar el SO ofreciendo un entorno estándar que permita la comunicación entre el SO y el firmware empotrado.
-	
-	Por este motivo realiza las tareas:
-	\begin{itemize}
-		\item Un auto-diagnóstico parecido al de BIOS.
-	
-		\item Cargar los controladores de los dispositivos básicos.
-	
-		\item Leer la tabla de particiones GPT 
-	
-		\item Localizar y ejecutar el cargador de arranque, archivo .efi, dentro de la partición ESP.
-	
-		\item Ofrecer un entorno de pre-arranque, un intérprete de comandos.
-	
+		FHS, hace referencia a \textit{Filesystem Hierarchy Standard}, es un estándar
+		que regula la ubicación de archivos y directorios en SO tipo Unix.  
 	\end{itemize}
 	
 	
-	Además, UEFI proporciona servicios de tiempo de ejecución, que permiten al sistema operativo seguir comunicándose con el firmware incluso después de haber tomado el control. Por ejemplo UEFI brinda la infraestructura necesaria para la interfaz ACPI, que permite al sistema operativo gestionar el consumo energético de los dispositivos y controlar los estados de suspensión del sistema.
+	\paragraph{6.c}
+	\begin{itemize}
+		\item Mencione sistemas de archivos soportados por GNU/Linux
+		
+		\item Los principales sistemas de archivos modernos son \texttt{ext4, btrfs, y
+			XFS}.
+	\end{itemize}
 	
-\end{itemize}
-
-
-\paragraph{8.c}
-\begin{itemize}
-	\item ¿Qué es el MBR? ¿Qué es el MBC?
 	
-		\item MBR de \textit{master boot record} es el primer sector físico de un medio de almacenamiento, encargado de cargar el SO y definir cómo está particionado el disco. Este sector de 512 bytes tiene tres partes:
+	
+	\paragraph{7.a}
+	
+	\begin{itemize}
+		
+		\item Particiones: definición, tipos, ventajas y desventajas.
+		
+		Las particiones son divisiones lógicas de un medio de almacenamiento. El
+		sistema operativo las trata como dispositivos independientes.
+		
+		Existen dos esquemas principales de particionado: \textbf{MBR} y \textbf{GPT}.
+		\begin{itemize}
+			\item \textbf{MBR}: soporta hasta 4 particiones primarias; para obtener más
+			particiones se crea una partición extendida que contiene particiones lógicas.
+			Está limitado a discos de hasta 2 TB.
+			\item \textbf{GPT}: no tiene el límite práctico de 4 particiones primarias,
+			soporta discos de gran tamaño, incluye una copia de seguridad de la tabla de
+			particiones y utiliza CRC para detectar corrupción.
+		\end{itemize}
+		
+		\textbf{Ventajas del particionado:}
+		\begin{itemize}
+			\item Aislamiento de fallos: si una partición se corrompe, las demás pueden
+			permanecer intactas.
+			\item Posibilidad de instalar múltiples sistemas operativos.
+			\item Uso de diferentes sistemas de archivos según los requerimientos de cada
+			partición.
+		\end{itemize}
+		
+		\textbf{Desventajas del particionado:}
+		\begin{itemize}
+			\item Poca flexibilidad por tener un tamaño fijo.
+			\item Posible desperdicio de espacio libre si las particiones no se
+			dimensionan adecuadamente.
+			\item Redimensionar particiones puede implicar riesgos o requerir herramientas
+			específicas.
+		\end{itemize}
+		
+	\end{itemize}
+	
+	\paragraph{7.b}
+	\begin{itemize}
+		\item ¿Cómo se identifican las particiones en GNU/Linux? (Considere discos IDE,
+		SCSI	y SATA).
+		
+		\item las particiones se identifican mediante archivos especiales ubicados en
+		\texttt{/dev}. En el caso de IDE \texttt{hda, hdb}, etc. corresponden a discos y
+		\texttt{hda1, hda2} se corresponden a particiones de \texttt{hda}. En el caso de
+		SATA y SCSI se usa \texttt{sda, sdb}, etc. para discos y \texttt{sda1, sda2}
+		para particiones.
+	\end{itemize}
+	
+	
+	\paragraph{7.c}
+	\begin{itemize}
+		\item ¿Cuántas particiones son necesarias como mínimo para instalar GNU/Linux?
+		Nómbrelas indicando tipo de partición, identificación, tipo de File System y
+		punto de montaje.
+		
+		\item Técnicamente la única partición imprescindible es la de la raíz. Que
+		podría tener la identificación sda2 y  puede tener una variedad de sistemas de
+		archivos, su punto de montaje es /. En sistemas UEFI se necesita una partición
+		EFI. Que debe ser FAT32 y tiene punto de montaje /boot/efi. Opcionalmente se usa
+		también una partición de intercambio.
+	\end{itemize}
+	
+	
+	
+	
+	
+	\paragraph{7.d}
+	\begin{itemize}
+		\item Dar ejemplos de diversos casos de particionamiento dependiendo del tipo
+		de tarea que se deba realizar en su sistema operativo.
+		
+		\item En una estación de trabajo bastaría con separar /home y tener las
+		particiones necesarias / y /boot/efi. Opcionalmente podemos tener swap.
+		
+		
+		En un servidor web podríamos separar /var y /tmp, además de separar /srv o
+		/home para aislar logs, temporales y datos del servicio de la raíz.
+		
+		En un sistema embebido usualmente hay una raíz de solo lectura y algunas
+		particiones de escritura para configuración o datos de aplicación.
+	\end{itemize}
+	
+	
+	
+	\paragraph{7.e}
+	\begin{itemize}
+		\item ¿Es posible visualizar particiones del tipo FAT y NTFS (que son de
+		Windows) en GNU/Linux?
+		
+		\item Si, no solo es posible la lectura si no también la escritura. Además en
+		el caso de FAT ademas este es el sistema de archivos obligatorio para la
+		partición EFI. Por lo que la mayoría de distribuciones tienen una partición FAT.
+	\end{itemize}
+	
+	
+	\paragraph{7.f}
+	\begin{itemize}
+		\item ¿Qué tipo de software para particionar existe? Menciónelos y compare.
+		
+		\item Principalmente están fdisk y gparted. Por un lado, fdisk es una de
+		interfaz de texto que no formatea, no permite re dimensionamiento, pero, está
+		disponible por defecto en la mayoría de distribuciones. Por otro lado, gparted
+		es una utilidad gráfica que si hace formateo y re dimensiona particiones pero
+		puede requerir instalación y un entorno gráfico.
+	\end{itemize}
+	
+	
+	
+	\paragraph{8.a}
+	\begin{itemize}
+		\item ¿Qué es el BIOS? ¿Qué tarea realiza?
+		
+		\item el BIOS de \textit{Basic I/O System}, es un programa que se ejecuta al
+		arrancar una computadora x86 y se encarga principalmente de inicializar el
+		hardware y cargar un gestor de arranque para que el SO tome el control.
+		
+		
+		Primero realiza un POST, \textit{power on self test} que verifica cuales
+		dispositivos tiene disponibles la computadora y su funcionamiento. 
+		
+		Configura los dispositivos básicos según la configuración almacenada en su
+		memoria.
+		
+		
+		Busca un dispositivo de almacenamiento que tenga un sector de arranque válido
+		según su configuración
+		
+		
+		lee el primer sector físico de disco y carga el gestor de arranque
+		transfiriéndole el control.
+		
+		Durante el arranque y incluso después ofrece rutinas para E/S, que permiten
+		interactuar con el teclado, pantalla y discos.
+	\end{itemize}
+	
+	
+	
+	\paragraph{8.b}
+	\begin{itemize}
+		\item ¿Qué es UEFI? ¿Cuál es su función?
+		
+		\item UEFI de \textit{Unified Extensible Firmware Interface} es un estándar que
+		regula la interfaz entre el firmware de la plataforma, hardware, y el SO durante
+		el arranque.
+		
+		Su función principal es la de inicializar el hardware y cargar el SO ofreciendo
+		un entorno estándar que permita la comunicación entre el SO y el firmware
+		empotrado.
+		
+		Por este motivo realiza las tareas:
+		\begin{itemize}
+			\item Un auto-diagnóstico parecido al de BIOS.
+			
+			\item Cargar los controladores de los dispositivos básicos.
+			
+			\item Leer la tabla de particiones GPT 
+			
+			\item Localizar y ejecutar el cargador de arranque, archivo .efi, dentro de la
+			partición ESP.
+			
+			\item Ofrecer un entorno de pre-arranque, un intérprete de comandos.
+			
+		\end{itemize}
+		
+		
+		Además, UEFI proporciona servicios de tiempo de ejecución, que permiten al
+		sistema operativo seguir comunicándose con el firmware incluso después de haber
+		tomado el control. Por ejemplo UEFI brinda la infraestructura necesaria para la
+		interfaz ACPI, que permite al sistema operativo gestionar el consumo energético
+		de los dispositivos y controlar los estados de suspensión del sistema.
+		
+	\end{itemize}
+	
+	
+	\paragraph{8.c}
+	\begin{itemize}
+		\item ¿Qué es el MBR? ¿Qué es el MBC?
+		
+		\item MBR de \textit{master boot record} es el primer sector físico de un
+		medio de almacenamiento, encargado de cargar el SO y definir cómo está
+		particionado el disco. Este sector de 512 bytes tiene tres partes:
 		
 		\begin{enumerate}
-			\item MBC de \textit{master boot code}, ocupa los primeros 446 bytes y es el código que la BIOS carga en memoria y ejecuta al arrancar. Su función es: analizar la tabla de particiones, buscar la que es activa, localizar el sector de inicio de la partición activa, cargarlo en memoria y, finalmente, transferir el control a este código que ya es específico del SO.
+			\item MBC de \textit{master boot code}, ocupa los primeros 446 bytes y es el
+			código que la BIOS carga en memoria y ejecuta al arrancar. Su función es:
+			analizar la tabla de particiones, buscar la que es activa, localizar el sector
+			de inicio de la partición activa, cargarlo en memoria y, finalmente, transferir
+			el control a este código que ya es específico del SO.
 			
-			\item Tabla de particiones, ocupa 64 bytes, describe cómo está particionado el disco, tiene un máximo de 4 entradas y por ende ese límite de particiones primarias.
+			\item Tabla de particiones, ocupa 64 bytes, describe cómo está particionado
+			el disco, tiene un máximo de 4 entradas y por ende ese límite de particiones
+			primarias.
 			
-			\item Firma de arranque, que ocupa 2 bytes y sirve como indicador de que este disco es válido para arrancar.
+			\item Firma de arranque, que ocupa 2 bytes y sirve como indicador de que este
+			disco es válido para arrancar.
 		\end{enumerate}
+		
+		
+	\end{itemize}
+	
+	
+	
+	\paragraph{8.d}
+	\begin{itemize}
+		\item ¿A qué hacen referencia las siglas GPT? ¿Qué sustituye? Indique cuál es
+		su formato.
+		
+		\item Hacen referencia a \textit{GUID Partition Table}. Un esquema de partición
+		que reemplaza a MBR. En especial en sistemas con arranque EFI.
+		
+		Su formato incluye:
+		
+		\begin{enumerate}
+			\item MBR de protección: mantiene compatibilidad.
+			
+			\item Cabecera GPT primaria: contiene la firma 'EFI PART', el tamaño de la
+			tabla de particiones, el GUID del disco, la cantidad de entradas y un checksum. 
+			
+			\item Entradas de partición: cada una describe una partición con GUID único,
+			tipo, LBA de inicio y fin y sus atributos.
+			
+			
+			\item Cabecera GPT de respaldo
+			
+		\end{enumerate}
+		
+	\end{itemize}
+	
+	
+	
+	\paragraph{8.e}
+	\begin{itemize}
+		\item ¿Cuál es la funcionalidad de un “Gestor de Arranque”? ¿Qué tipos
+		existen?¿Dónde se instalan? Cite gestores de arranque conocidos.
+		
+		\item Un gestor de arranque tiene la tarea de localizar el SO en el disco,
+		cargarlo en memoria y cederle el control. Entre sus funciones están:
+		
+		\begin{enumerate}
+			\item Cargar el kernel, y una imagen de \textit{disco RAM}
+			
+			\item Pasar parámetros al kernel.
+			
+			\item Cargar y ejecutar aplicaciones \textit{.efi}.
+			
+			\item Presentar un menú con opciones de SO y versiones del kernel.
+			
+			
+		\end{enumerate}
+		
+		En sistemas BIOS el gestor se instala en el MBR, mientras que en UEFI se
+		instala en la partición EFI, \texttt{/boot/efi}.
+		
+		Existen varios tipos, avanzados como GRUB 2, o simples como LILO y Windows Boot
+		Manager.
+		
+	\end{itemize}
+	
+	
+	
+	\paragraph{8.f}
+	\begin{itemize}
+		\item ¿Cuáles son los pasos que se suceden desde que se prende una computadora
+		hasta que el SO es cargado (proceso de \textit{bootstrap})?
+		
+		\item la computadora ejecuta la BIOS/UEFI.
+		
+		\item realiza un auto diagnostico, y carga controladores básicos y carga el
+		gestor de arranque ya sea desde el MBR o la partición EFI.
+		
+		\item el gestor de arranque carga el kernel del SO, y a menudo un
+		\textit{initrd/initramfs}.
+		
+		\item el kernel se inicializa y monta la raíz.
+		
+		\item se ejecuta el primer proceso, \textit{init/systemd}.
+		
+	\end{itemize}
+	
+	
+	\paragraph{8.g}
+	\begin{itemize}
+		\item Analice el proceso de arranque en GNU/Linux y describa sus principales
+		pasos.
+		
+		\begin{enumerate}
+			\item Encendido y ejecución de firmware.
+			
+			\item Auto diagnóstico e inicialización de hardware: se verifica el estado de
+			memoria, discos, etc, se inicializan los controladores básicos de dispositivo y
+			se define el orden de arranque.
+			
+			\item Localización y carga del gestor de arranque.
+			
+			\item Ejecución del gestor de arranque: GRUB carga en memoria el kernel
+			\texttt{vmlinuz-}. Carga un disco RAM \texttt{initrd.img-}. Pasa parámetros al
+			kernel, \texttt{root=/dev/sda1, ro, quiet}.
+			
+			\item Inicialización del kernel: se descomprime el kernel y empieza su
+			inicialización, configura la gestión de memoria, detecta e inicializa
+			dispositivos de hardware y carga el sistema de archivos raíz temporal mediante
+			\texttt{initramfs}. Una vez cargados los controladores esenciales, se monta el
+			sistema de archivos real y se realiza el cambio de raíz mediante
+			\texttt{switch\_root}.
+			
+			
+			\texttt{initramfs} contiene los drivers y herramientas esenciales que permiten
+			montar el sistema de archivos real.
+			
+			\item Ejecución del primer proceso: se ejecuta el primer proceso de usuario,
+			init o systemd. Tiene PID 1 y es el responsable de iniciar todos los procesos
+			del sistema.
+			
+			\item Arranque de servicios y entorno de usuario: el sistema de inicio lanza
+			servicios de red, cron, syslog, etc., terminales virtuales y si corresponde, el
+			entorno gráfico. El sistema está listo entonces para iniciar sesión.
+			
+		\end{enumerate}
+		
+	\end{itemize}
+	
+	
+	\paragraph{8.h}
+	\begin{itemize}
+		\item ¿Cuáles son los pasos que se suceden en el proceso de parada
+		(\textit{shutdown}) de GNU/Linux?
+		
+		
+		\begin{enumerate}
+			\item Inicio del apagado: el usuario ejecuta un comando de apagado,
+			\texttt{shutdown -h now} o \texttt{systemctl poweroff} y el sistema de inicio
+			recibe la orden.
+			
+			\item Notificación a los usuarios: un mensaje vía \texttt{wall} que advierte a
+			los usuarios.
+			
+			\item Detención ordenada de los servicios: se ejecutan los scripts de parada
+			en orden inverso que fueron iniciados. En systemd se detienen las unidades
+			activas.
+			
+			\item Terminación de procesos de usuario: se terminan los procesos de los
+			usuarios, cerrando sus sesiones y aplicaciones.
+			
+			\item Sincronización de datos: se ejecuta el comando \texttt{sync} para
+			escribir en disco los datos pendientes de la caché.
+			
+			\item Desmontaje de sistemas de archivos: se desmontan todos, excepto el raíz,
+			que se remonta como solo lectura.
+			
+			\item Detención de procesos restantes: se envía \texttt{SIGTERM} y si no
+			responde, \texttt{SIGKILL}.
+			
+			\item Apagado de hardware: el kernel ejecuta rutinas de apagado de hardware
+			como discos, puertos, etc. Finalmente el sistema se detiene, \texttt{halt} o
+			\texttt{poweroff}.
+			
+		\end{enumerate}
+		
+	\end{itemize}
+	
+	
+	
+	
+	\paragraph{8.h}
+	\begin{itemize}
+		\item ¿Es posible tener en una PC GNU/Linux y otro SO instalado? Justifique.
+		
+		Si, cada SO puede instalarse en su propia partición o disco. En sistemas
+		modernos con UEFI cada SO tiene su gestor de arranque en la partición EFI. Y el
+		gestor de arranque, por ej. GRUB presenta un menú con las opciones disponibles.
+		
+	\end{itemize}
+	
+	
+	
+	
+	\paragraph{9.a}
+	\begin{itemize}
+		\item ¿Cómo se identifican los archivos en GNU/Linux?
+		
+		En GNU/Linux no existe el concepto de extensión de archivo. Un archivo se
+		identifica por su contenido, tipo, es decir directorio, enlace, etc, y sus
+		permisos. Herramientas como \texttt{file} permiten determinar el tipo.
+		
+	\end{itemize}
+	
+	
+	
+	
+	\paragraph{9.e}
+	\begin{itemize}
+		\item \texttt{ln -s ~/testing /testOnRoot}, crea un enlace simbólico al archivo
+		~/testing en /.
+		
+		
+		\item \texttt{cp ~/testing ~/testingCopy}, crea una copia del archivo ~/testing
+		en el mismo directorio.
+		
+		\item \texttt{find [ruta/s..] [expresion]}
+		
+		\texttt{find /home -name "TP1.pdf"}
+		
+		\texttt{find /home -iname "*.JPG"}
+		
+	\end{itemize}
+	
+	
+	
+	
+	
+	
+	\paragraph{11}
+	\begin{itemize}
+		\item investigue el objetivo, parámetros y ubicación de los siguientes
+		comandos:
+		
+		
+		
+		
+		\item \texttt{man}: una interfaz para los manuales del sistema. Tiene la
+		sintaxis básica \texttt{man [seccion] palabra}, las secciones más comunes son
+		del 1 al 9, y se provee el nombre de alguna utilidad, llamada al sistema, libc,
+		etc. Por ej. \texttt{man 2 write} para llamadas al sistema. Usa un pager,
+		normalmente \texttt{less}, para mostrar las páginas.
+		
+		Parámetros útiles:
+		
+		\begin{itemize}
+			\item -f: da una descripción breve.
+			\item -w: da la ruta de la pagina del manual.
+			\item -a: muestra todas las coincidencias en todas las secciones del manual en
+			sucesión.
+			\item -k: busca en nombre o descripción.
+			
+		\end{itemize}
+		
+		Las páginas están guardadas en \texttt{/usr/share/man/} y el ejecutable en
+		\texttt{/usr/bin/man}.
+		
+		
+		\item \texttt{shutdown}: usado para apagar, reiniciar o \textit{halt}. Tiene
+		los parámetros: -h para apagar, -r para reiniciar, -H para halt. Tiene la
+		sintaxis \texttt{shutdown -h now} o \texttt{shutdown -r +5} el ultimo comando
+		reinicia el sistema en cinco minutos. Se ubica en \texttt{/usr/sbin/shutdown}.
+		
+		
+		\item \texttt{reboot}: reinicia el sistema, algunos parámetros son -f para
+		forzar el reinicio evitando systemd. y -p para apagar el sistema. Su ubicación
+		es en \texttt{/usr/sbin/reboot}.
+		
+		\item \texttt{halt}: detiene los servicios, desmonta los sistemas de archivos y
+		a veces no apaga la máquina. Se ubica en \texttt{/usr/sbin/halt}.
+		
+		\item \texttt{uname}: imprime información del sistema, algunos parámetros
+		importantes son -a para imprimir todo, -m para imprimir la arquitectura, -r para
+		imprimir la versión del kernel. Se ubica en \texttt{/usr/bin/uname}.
+		
+		
+		\item \texttt{dmesg}: muestra los mensajes generados durante el arranque y por
+		controladores de dispositivos. Algunos parámetros son -w para esperar mensajes,
+		-T para ver el tiempo de forma legible. Su ubicación  es
+		\texttt{/usr/bin/dmesg}.
+		
+		Por ejemplo: \texttt{dmesg -T | tail}, \texttt{dmesg | grep usb}, \texttt{dmesg
+			-l err}.
+		
+		
+		
+		\item \texttt{lspci}: muestra información de los buses PCI/PCIE y dispositivos
+		conectados. Algunos parámetros son -v para mostrar detalles y -k para mostrar el
+		controlador de cada dispositivo. Su ubicación es \texttt{/usr/bin/lspci}. lspci
+		forma parte de pciutils.
+		
+		\item \texttt{at}: ejecuta un comando en uin momento especificado. Ej
+		\texttt{at -f /ruta/al/script.sh 14:00}. Ubicación en \texttt{/usr/bin/at}.
+		
+		
+		\item \texttt{head}: muestra las primeras lineas de un archivo. Algunos
+		parámetros -n para mostrar n lineas. Ubicación \texttt{/usr/bin/head}.
+		
+		\item \texttt{tail}: \texttt{/usr/bin/tail}.
+	\end{itemize}
+	
+	
+	
+	\paragraph{12.a}
+	\begin{itemize}
+		
+		\item \textbf{Proceso de arranque System V:} enumere los pasos del proceso de
+		inicio de un sistema GNU/Linux, desde que se prende la PC hasta que se logra
+		obtener el login en el sistema.
+		
+		\begin{enumerate}
+			\item Se ejecuta el código del BIOS.
+			
+			\item El BIOS ejecuta el POST (autodiagnóstico).
+			
+			\item El BIOS lee el sector de arranque (MBR).
+			
+			\item Se carga el gestor de arranque (por ejemplo, GRUB).
+			
+			\item El gestor de arranque carga el kernel y el initrd/initramfs.
+			
+			\item El kernel se descomprime, inicializa el scheduler y el resto del
+			hardware; monta el initrd/initramfs como raíz temporal, carga los controladores
+			necesarios y luego monta el sistema de archivos raíz real.
+			
+			\item El kernel ejecuta \texttt{/sbin/init} (el primer proceso) y se libera el
+			initrd.
+			
+			\item \texttt{init} lee \texttt{/etc/inittab} para determinar el runlevel por
+			defecto.
+			
+			\item Se ejecutan los scripts de inicialización del sistema (runlevel S o 1).
+			
+			\item Se cambia al runlevel por defecto y se ejecutan los scripts
+			correspondientes.
+			
+			\item Se inician los servicios y los procesos de login (\texttt{getty}).
+			
+			\item El sistema está listo para que el usuario inicie sesión.
+		\end{enumerate}
+	\end{itemize}
+	
+	
+	
+	\paragraph{12.b}
+	\begin{itemize}
+		
+		\item {Proceso de arranque System V:} el proceso INIT. ¿Quién lo ejecuta? ¿Cuál es su objetivo?
+		
+		INIT es ejecutado por el kernel luego de inicializar el hardware y la gestión de memoria, montar el sistema de archivos raíz real y liberar initramfs.
+		
+		Su objetivo es:
+		
+		\begin{itemize}
+			\item Inicializar el sistema de acuerdo al \textit{runlevel} seleccionado.
+			
+			\item Lee el archivo \textit{/etc/inittab} que define: runlevel por defecto, los scripts de arranque para cada runlevel, las terminales virtuales para el inicio de sesión.
+			
+			\item Gestionar los runlevels:  cambiar de un nivel de ejecución a otro, por ej. de monousuario a multiusuario.
+			
+			\item Arrancar y detener servicios: usando los scripts en \textit{/etc/init.d}.
+			
+			\item Adoptar procesos huérfanos.
+			
+			\item Proporcionar el entorno final: para que el usuario pueda iniciar sesión.
+			
+		\end{itemize}
+		
+	\end{itemize}
+	
+	
+\paragraph{12.c}
+\begin{itemize}
+	
+	\item {Proceso de arranque System V:} runlevels. ¿Qué son? ¿Cuál es su objetivo?
+	
+	Los \textit{runlevels} o niveles de ejecución son estados predefinidos del sistema en SysV Init. Que determinan que conjunto de servicios y procesos deben estar activos en un momento dado.
+	
+	Cada \textit{runlevel} esta asociado a un numero y define:
+	
+	\begin{itemize}
+		\item Que servicios se inician o detienen.
+		
+		\item Si el sistema está en modo monousuario o multiusuario.
+		
+		\item Si hay interfaz gráfica o solo consola.
+		
+		\item Si se está apagando o reiniciando.
+	\end{itemize}
+	
 	
 	
 \end{itemize}
 
 
-
-\paragraph{8.d}
+	
+\paragraph{12.d}
 \begin{itemize}
-	\item ¿A qué hacen referencia las siglas GPT? ¿Qué sustituye? Indique cuál es su formato.
 	
-	\item Hacen referencia a \textit{GUID Partition Table}. Un esquema de partición que reemplaza a MBR. En especial en sistemas con arranque EFI.
+	\item {Proceso de arranque System V:} ¿A qué hace referencia cada nivel de ejecución según el estándar? ¿Dónde se define qué \textit{runlevel} ejecutar al iniciar el sistema operativo? ¿Todas las distribuciones respetan estos estándares?
 	
-	Su formato incluye:
+	En SysV init los runlevels estándar son:
 	
 	\begin{enumerate}
-		\item MBR de protección: mantiene compatibilidad.
+		\item[0] \textit{halt}, apagar el sistema.
 		
-		\item Cabecera GPT primaria: contiene la firma 'EFI PART', el tamaño de la tabla de particiones, el GUID del disco, la cantidad de entradas y un checksum. 
+		\item[1] 1/S modo monousuario, solamente root, mantenimiento.
 		
-		\item Entradas de partición: cada una describe una partición con GUID único, tipo, LBA de inicio y fin y sus atributos.
+		\item[2] multiusuario sin servicios de red.
 		
+		\item[3] multiusuario con red.
 		
-		\item Cabecera GPT de respaldo
+		\item[4] no estándar, disponible para usos específicos.
 		
+		\item[5] multiusuario con entorno gráfico.
+		
+		\item[6] \textit{reboot}, reiniciar el sistema.
 	\end{enumerate}
+	
+	El \textit{runlevel} que se ejecuta al iniciar el sistema se define en \textit{/etc/inittab}.
+	
+	
+	No todas las distribuciones respetan esta convención, y el comportamiento en sistemas modernos es emulado mediante \textit{targets} de systemd. Por ej. \texttt{poweroff.target}, \texttt{graphical.target}, \texttt{reboot.target}.
+	
+	
 	
 \end{itemize}
 
 
 
-\paragraph{8.e}
-\begin{itemize}
-	\item ¿Cuál es la funcionalidad de un “Gestor de Arranque”? ¿Qué tipos existen?¿Dónde se instalan? Cite gestores de arranque conocidos.
+
 	
-	\item Un gestor de arranque tiene la tarea de localizar el SO en el disco, cargarlo en memoria y cederle el control. Entre sus funciones están:
+\paragraph{12.e}
+\begin{itemize}
+	
+	\item {Proceso de arranque System V:} Archivo \textit{/etc/inittab}. ¿Cuál es su finalidad? ¿Qué tipo de información se almacena en el? ¿Cuál es la estructura de la información que en él se almacena?
+	
+	\texttt{/etc/inittab} es el archivo de configuración principal del proceso \textit{init}. Su finalidad es definir el comportamiento durante el arranque y la operación del sistema. \texttt{/etc/inittab} contiene lineas de configuración que especifican: 
+	
+	\begin{itemize}
+		\item \textit{initdefault}, el runlevel por defecto.
+		
+		\item \textit{sysinit}, scripts o programas que se ejecutan al iniciar el sistema.
+		
+		\item procesos que se lanzan en un runlevel determinado.
+		
+		\item terminales virtuales para login.
+		
+		
+	\end{itemize}
+	
+	
+	Cada linea de \textit{inittab} tiene el formato:
+	
+	\texttt{id:runlevels:accion:proceso}
+	
+	Un ejemplo típico seria
+	
+	\begin{lstlisting}[language=bash]
+	# Runlevel por defecto
+	id:3:initdefault:
+	
+	# Inicializacion del sistema
+	si::sysinit:/etc/rc.d/rc.sysinit
+	
+	# Ejecutar scripts del runlevel 3
+	l3:3:wait:/etc/rc.d/rc 3
+	
+	# Terminales virtuales
+	1:2345:respawn:/sbin/getty 38400 tty1
+	2:2345:respawn:/sbin/getty 38400 tty2
+	
+	# Accion de Ctrl+Alt+Del
+	ca:12345:ctrlaltdel:/sbin/shutdown -r now
+	\end{lstlisting}
+	
+	
+\end{itemize}
+
+
+
+
+\paragraph{12.f}
+\begin{itemize}
+	
+	\item {Proceso de arranque System V:} Suponga que se encuentra en el runlevel <X>. Indique qué comando(s) deberá ejecutar para cambiar al runlevel <Y>. ¿Este cambio es permanente? ¿Por qué?
+	
+	Para cambiar al runlevel <Y> bastaría con usar el comando \texttt{sudo telinit Y}. El cambio es temporal, y solo modifica el nivel de ejecución actual; no la configuración de arranque (\textit{inittab}).
+
+	
+\end{itemize}
+
+	
+	
+	
+	
+
+\paragraph{12.g}
+\begin{itemize}
+	
+	\item {Proceso de arranque System V:} scripts RC. ¿Cuál es su finalidad? ¿Dónde se almacenan? Cuando un sistema GNU/Linux arranca o se detiene se ejecutan scripts, indique cómo determina qué script ejecutar ante cada acción. ¿Existe un orden para llamarlos? Justifique.
+	
+	Los \textit{scripts RC} de \textit{run control} son scripts de inicio y parada de servicios. Su objetivo es iniciar, detener y reiniciar servicios del sistema de forma ordenada de acuerdo al runlevel activo. Su finalidad es automatizar la configuración  del entorno como red, servicios y demonios.
+	
+	Se almacenan principalmente en \textit{\textbf{/etc/init.d}} por ejemplo \texttt{/etc/init.d/ssh}. Y también están los enlaces simbólicos \textit{\textbf{/etc/rcX.d}} por ejemplo \texttt{/etc/rc3.d/}.
+	
+	Al cambiar al runlevel X, \textit{init} ejecuta el script \textit{/etc/rc.d/rc}, que examina el directorio \textit{/etc/rcX.d/} y ejecuta los enlaces que empiezan con S con el argumento \textit{start} y los que empiezan por K con el argumento \textit{stop}.
+	
+	Se ejecutan primero los scripts con prefijo K y después S en el orden que indica su número. Esto garantiza que los servicios se detengan e inicien en el orden correcto según sus dependencias.
+	
+	
+	
+	
+\end{itemize}
+
+
+
+
+
+\paragraph{13.a}
+\begin{itemize}
+	
+	\item​ ¿Qué es\textit{systemd}?
+	
+	
+	\textit{\textbf{Systemd}} es el sistema de inicio y gestor de procesos moderno predominante. Se ejecuta como primer proceso, PID 1, y es el responsable de inicializar el sistema, montar sistemas de archivos, gestionar sockets y temporizadores y supervisar la ejecución de todos los procesos.
+	
+	
+\end{itemize}
+
+
+
+
+
+
+\paragraph{13.b}
+\begin{itemize}
+	
+	\item​ ¿A qué hace referencia el concepto de \textit{unit} en systemd?
+	
+	una unidad es un objeto de configuración que systemd sabe como administrar. Representa recursos o tareas del sistema como servicios, puntos de montaje, targets, etc.
+	
+	Cada unidad se define mediante un archivo de configuración con una extensión que indica su tipo. Por ej. \texttt{.service}, \texttt{.mount}, \texttt{.target}.
+	
+	Algunos comandos asociados son: \texttt{systemctl list-units} lista todas las unidades activas. \texttt{systemctl status <unidad>} informa el estado de una unidad y \texttt{systemctl start/stop/restart <unidad>}, controla una unidad.
+	
+	
+\end{itemize}
+
+
+
+
+
+
+
+\paragraph{13.c}
+\begin{itemize}
+	
+	\item​ ¿Para qué sirve el comando \textit{systemctl} en systemd?
+	
+	\textit{systemctl} es el comando principal para interactuar con systemd. Sirve para controlar y supervisar unidades del sistema.
+	
+	Funciones principales:
 	
 	\begin{enumerate}
-		\item Cargar el kernel, y una imagen de \textit{disco RAM}
+		\item gestión de servicios: \texttt{systemctl start ssh}; \texttt{systemctl stop ssh}; \texttt{systemctl reload ssh}
 		
-		\item Pasar parámetros al kernel.
+		\item habilitar/deshabilitar servicios: \texttt{systemctl enable ssh}
 		
-		\item Cargar y ejecutar aplicaciones \textit{.efi}.
-		
-		\item Presentar un menú con opciones de SO y versiones del kernel.
+		\item consultar estado y logs: \texttt{systemctl status ssh}
 		
 		
+		\item listar unidades: \texttt{systemctl list-units}; \texttt{systemctl list-sockets}
+		
+		\item gestionar \textit{targets}: \texttt{systemctl get-default}; \texttt{systemctl set-default graphical.target}
+		
+		\item apagar, reiniciar o suspender: \texttt{systemctl poweroff}; \texttt{systemctl reboot}; \texttt{systemctl suspend}
+		
+		\item recarga su configuración: \texttt{sudo systemctl daemon-reload}
 	\end{enumerate}
 	
-	En sistemas BIOS el gestor se instala en el MBR, mientras que en UEFI se instala en la partición EFI, \texttt{/boot/efi}.
 	
-	Existen varios tipos, avanzados como GRUB 2, o simples como LILO y Windows Boot Manager.
+	
 	
 \end{itemize}
 
 
 
-\paragraph{8.f}
+
+\paragraph{13.d}
 \begin{itemize}
-	\item ¿Cuáles son los pasos que se suceden desde que se prende una computadora hasta que el SO es cargado (proceso de \textit{bootstrap})?
 	
-	\item la computadora ejecuta la BIOS/UEFI.
+	\item​ ¿A qué hace referencia el concepto de \textit{target} en systemd?
 	
-	\item realiza un auto diagnostico, y carga controladores básicos y carga el gestor de arranque ya sea desde el MBR o la partición EFI.
+	En systemd un \textit{target} es un conjunto de unidades que define un estado o modo de operación del sistema. Es una unidad, \texttt{.target} que agrupa a otras, servicios, sockets, mounts, para alcanzar un estado deseado. Un \textit{target} permite activar o desactivar un conjunto coherente de servicios de una vez.
 	
-	\item el gestor de arranque carga el kernel del SO, y a menudo un \textit{initrd/initramfs}.
+	Ejemplos comunes:
 	
-	\item el kernel se inicializa y monta la raíz.
+	\begin{center}
+		\begin{tabular}{||c c c ||} 
+			\hline
+			
+			target & runlevel & desc.\\ [0.5ex] 
+			
+			\hline\hline
+			poweroff.target & 0 &  \\ 
+			\hline
+			
+			rescue.target & 1/S &   \\
+			
+			\hline
+			
+			multi-user.target & 3 &  \\
+			
+			\hline
+			
+			graphical.target & 5 &  \\
+			\hline
+			reboot.target & 6 &  \\ [1ex] 
+			\hline
+		\end{tabular}
+	\end{center}
 	
-	\item se ejecuta el primer proceso, \textit{init/systemd}.
 	
 \end{itemize}
 
 
-\paragraph{8.g}
+\paragraph{13.e}
 \begin{itemize}
-	\item Analice el proceso de arranque en GNU/Linux y describa sus principales pasos.
 	
-	\begin{enumerate}
-		\item Encendido y ejecución de firmware.
-		
-		\item Auto diagnóstico e inicialización de hardware: se verifica el estado de memoria, discos, etc, se inicializan los controladores básicos de dispositivo y se define el orden de arranque.
-		
-		\item Localización y carga del gestor de arranque.
-		
-		\item Ejecución del gestor de arranque: GRUB carga en memoria el kernel \texttt{vmlinuz-}. Carga un disco RAM \texttt{initrd.img-}. Pasa parámetros al kernel, \texttt{root=/dev/sda1, ro, quiet}.
-		
-		\item Inicialización del kernel: se descomprime el kernel y empieza su inicialización, configura la gestión de memoria, detecta e inicializa dispositivos de hardware y carga el sistema de archivos raíz temporal mediante \texttt{initramfs}. Una vez cargados los controladores esenciales, se monta el sistema de archivos real y se realiza el cambio de raíz mediante \texttt{switch\_root}.
-		
-		
-		\texttt{initramfs} contiene los drivers y herramientas esenciales que permiten montar el sistema de archivos real.
-		
-		\item Ejecución del primer proceso: se ejecuta el primer proceso de usuario, init o systemd. Tiene PID 1 y es el responsable de iniciar todos los procesos del sistema.
-		
-		\item Arranque de servicios y entorno de usuario: el sistema de inicio lanza servicios de red, cron, syslog, etc., terminales virtuales y si corresponde, el entorno gráfico. El sistema está listo entonces para iniciar sesión.
-		
-	\end{enumerate}
+	\item ​Ejecutar el comando pstree. ¿Qué es lo que se puede observar a partir de la ejecución de este comando?
+	
+	
+	Con \texttt{pstree} se observa la jerarquía de procesos del sistema en forma de árbol. En distribuciones modernas, la raíz es systemd (PID 1), y de él cuelgan los demonios y servicios junto con sus procesos hijos. También se pueden ver las terminales activas y los procesos de usuario. La opción -p permite mostrar los PID.
 	
 \end{itemize}
 
-
-\paragraph{8.h}
-\begin{itemize}
-	\item ¿Cuáles son los pasos que se suceden en el proceso de parada (\textit{shutdown}) de GNU/Linux?
-	
-	
-	\begin{enumerate}
-		\item Inicio del apagado: el usuario ejecuta un comando de apagado, \texttt{shutdown -h now} o \texttt{systemctl poweroff} y el sistema de inicio recibe la orden.
-		
-		\item Notificación a los usuarios: un mensaje vía \texttt{wall} que advierte a los usuarios.
-		
-		\item Detención ordenada de los servicios: se ejecutan los scripts de parada en orden inverso que fueron iniciados. En systemd se detienen las unidades activas.
-	
-		\item Terminación de procesos de usuario: se terminan los procesos de los usuarios, cerrando sus sesiones y aplicaciones.
-		
-		\item Sincronización de datos: se ejecuta el comando \texttt{sync} para escribir en disco los datos pendientes de la caché.
-		
-		\item Desmontaje de sistemas de archivos: se desmontan todos, excepto el raíz, que se remonta como solo lectura.
-		
-		\item Detención de procesos restantes: se envía \texttt{SIGTERM} y si no responde, \texttt{SIGKILL}.
-		
-		\item Apagado de hardware: el kernel ejecuta rutinas de apagado de hardware como discos, puertos, etc. Finalmente el sistema se detiene, \texttt{halt} o \texttt{poweroff}.
-	
-	\end{enumerate}
-	
-\end{itemize}
-
-
-
-
-\paragraph{8.h}
-\begin{itemize}
-	\item ¿Es posible tener en una PC GNU/Linux y otro SO instalado? Justifique.
-	
-	Si, cada SO puede instalarse en su propia partición o disco. En sistemas modernos con UEFI cada SO tiene su gestor de arranque en la partición EFI. Y el gestor de arranque, por ej. GRUB presenta un menú con las opciones disponibles.
-	
-\end{itemize}
-
-
-
-
-\paragraph{9.a}
-\begin{itemize}
-	\item ¿Cómo se identifican los archivos en GNU/Linux?
-	
-	En GNU/Linux no existe el concepto de extensión de archivo. Un archivo se identifica por su contenido, tipo, es decir directorio, enlace, etc, y sus permisos. Herramientas como \texttt{file} permiten determinar el tipo.
-	
-\end{itemize}
-
-
-
-
-\paragraph{9.e}
-\begin{itemize}
-	\item \texttt{ln -s ~/testing /testOnRoot}, crea un enlace simbólico al archivo ~/testing en /.
-	
-	
-	\item \texttt{cp ~/testing ~/testingCopy}, crea una copia del archivo ~/testing en el mismo directorio.
-	
-	\item \texttt{find [ruta/s..] [expresion]}
-	
-	\texttt{find /home -name "TP1.pdf"}
-	
-	\texttt{find /home -iname "*.JPG"}
-	
-\end{itemize}
-
-
-
-
-
-
-\paragraph{9.e}
-\begin{itemize}
-	\item investigue el objetivo, parámetros y ubicación de los siguientes comandos:
-	
-	
-	\item\texttt{man}: una interfaz para los manuales del sistema. Tiene la sintaxis básica es \texttt{man [seccion] palabra}, las secciones más comunes son del 1 al 9, y se provee el nombre de alguna utilidad, llamada al sistema, libc, etc. Por ej. \texttt{man 2 write} para llamadas al sistema. Usa un pager, normalmente \texttt{less}, para mostrar las páginas.
-	
-	Parámetros útiles:
-	
-	\item -f: da una descripción breve.
-	\item -w: da la ruta de la pagina del manual.
-	\item -a: muestra todas las coincidencias en todas las secciones del manual en sucesión.
-	\item -k: retorna las paginas del manual con nombre o descripción dados.
-	
-	Las páginas están guardadas en \texttt{/usr/share/man/} y el ejecutable en \texttt{/usr/bin/man}.
-
-	
-\end{itemize}
 
 
 
